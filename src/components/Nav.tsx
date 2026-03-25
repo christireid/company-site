@@ -13,7 +13,6 @@ export default function Nav() {
   const links = [
     { label: 'Services', href: '#section-services' },
     { label: 'AI Implementation', href: '#section-product' },
-    { label: 'Our work', href: '#section-results' },
     { label: 'Process', href: '#section-process' },
   ]
 
