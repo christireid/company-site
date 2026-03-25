@@ -1,5 +1,5 @@
 {
-  "name": "v0-code-and-clarity",
+  "name": "company_site",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
