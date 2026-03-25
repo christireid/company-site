@@ -15,7 +15,6 @@ export default function Footer() {
           {[
             { label: 'What we do', href: '#section-transform' },
             { label: 'Services', href: '#section-services' },
-            { label: 'Our Work', href: '#section-results' },
             { label: 'How We Work', href: '#section-process' },
             { label: 'Contact', href: '#section-contact' },
           ].map(l => (
