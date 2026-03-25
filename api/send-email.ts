@@ -20,7 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // ── Sender / recipient config ────────────────────────────────────────────
   // FROM: update to hello@codeclarity.ai once codeclarity.ai is verified
   //       in Resend (resend.com/domains). Until then the test sender is used.
-  const FROM = 'Code & Clarity <onboarding@resend.dev>'
+  const FROM = 'Code & Clarity <hello@claruumaum.resend.app>'
   const TO   = 'christi@codeclarity.ai'
   // ────────────────────────────────────────────────────────────────────────
 
