@@ -1,4 +1,5 @@
 {
+  "name": "v0-code-and-clarity",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [

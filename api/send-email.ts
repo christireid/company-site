@@ -17,13 +17,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // ── Sender / recipient config ────────────────────────────────────────────
-  // FROM: must be from a domain verified in Resend (resend.com/domains).
-  //   • Before domain verification, use "onboarding@resend.dev" (test only).
-  //   • After verifying codeclarity.ai, set EMAIL_FROM in Vercel env vars:
-  //       EMAIL_FROM = Code & Clarity <hello@codeclarity.ai>
-  // TO: where contact form submissions land.
-  const FROM = process.env.EMAIL_FROM ?? 'Code & Clarity <onboarding@resend.dev>'
-  const TO   = process.env.EMAIL_TO   ?? 'christi@codeclarity.ai'
+  // FROM: update to hello@codeclarity.ai once codeclarity.ai is verified
+  //       in Resend (resend.com/domains). Until then the test sender is used.
+  const FROM = 'Code & Clarity <onboarding@resend.dev>'
+  const TO   = 'christi@codeclarity.ai'
   // ────────────────────────────────────────────────────────────────────────
 
   const subject = `New enquiry from ${name}${org ? ` · ${org}` : ''}`
