@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { Resend } from 'resend'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -38,6 +37,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   `
 
   try {
+    const { Resend } = await import('resend')
     const resend = new Resend(apiKey)
     const { error } = await resend.emails.send({
       from: FROM,
