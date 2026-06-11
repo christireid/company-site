@@ -2,7 +2,6 @@ import React from 'react'
 
 const FACTS = [
   '10+ years across engineering, technical training & editorial',
-  '50+ teams upskilled',
   '100% of IP stays with you',
   'Scope agreed in writing before work begins',
 ]

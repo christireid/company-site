@@ -112,6 +112,6 @@ Optionally, right-aligned in Cormorant italic: *A decision, not a deck.*
 
 ## [VERIFY] before publishing
 
-- "50+ teams upskilled" is deliberately **omitted** here until sourced — the About stands without it.
+- "50+ teams upskilled" has been retired sitewide (unsourced) — do not reintroduce it in posts unless a count is documented.
 - Booking URL for the custom button when the diagnostic scheduler exists.
 - Cover image to be produced from the site's token system (I can generate the SVG/PNG on request).

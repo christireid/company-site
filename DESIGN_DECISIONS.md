@@ -77,7 +77,7 @@ Dark mode: **not built** (explicitly deferred).
 | Item | Decision |
 |---|---|
 | Diagnostic free vs paid | Copy assumes free (no price named) — as written in Copy v2 |
-| `50+ teams upskilled` | Kept — already claimed on the live site; flagged for sourcing |
+| `50+ teams upskilled` | **Removed sitewide** (owner decision, June 2026 — unsourced); manifesto stat replaced with the contractual "1 business day / First response" |
 | Higher-ed case detail | Kept as written; flagged — soften if the engagement is identifiable |
 | LegalTech "zero churn" case | **Cut** (Copy v2's own recommendation absent verification) |
 | FAQ #8 pricing | Included (Copy v2 recommends) |

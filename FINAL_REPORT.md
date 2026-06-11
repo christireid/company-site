@@ -35,7 +35,7 @@ The three source documents conflict. Resolution, argued in `DESIGN_DECISIONS.md`
 | Item | Shipped as | Action |
 |---|---|---|
 | Diagnostic free vs paid | Free-but-scarce framing, no price named | Confirm; if paid, name the price in CTAs |
-| `50+ teams upskilled` | Kept (already claimed on the live site) | Source the count or cut from ProofStrip + ManifestoBreak |
+| `50+ teams upskilled` | **Removed sitewide** (owner decision; manifesto stat now "1 business day / First response") | Reintroduce only with a documented count |
 | Higher-ed case detail | Kept verbatim | Confirm the engagement isn't identifiable at this detail level |
 | LegalTech "zero churn" case | **Cut** (copy doc's own recommendation) | Restore only if the churn claim is substantiated |
 | FAQ #8 pricing | Included (copy doc recommends) | Confirm |
