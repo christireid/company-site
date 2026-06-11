@@ -1,8 +1,8 @@
 import React from 'react'
 
 const LINKS = [
-  { label: 'Approach', href: '#section-product' },
   { label: 'Services', href: '#section-services' },
+  { label: 'Approach', href: '#section-product' },
   { label: 'Process', href: '#section-process' },
   { label: 'About', href: '#section-about' },
   { label: 'Contact', href: '#section-contact' },
@@ -37,6 +37,7 @@ export default function Footer() {
             </a>
           ))}
           <a href="/accessibility">Accessibility</a>
+          <a href="/privacy">Privacy</a>
         </nav>
       </div>
     </footer>

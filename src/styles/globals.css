@@ -350,6 +350,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   font-size: 1.28rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 .amp { color: var(--terracotta-ink); }
 
@@ -384,6 +385,30 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
 }
 .nav-cta:hover { background: var(--terracotta-ink); border-color: var(--terracotta-ink); color: var(--paper); }
+/* bar variant: the persistent mobile CTA — hidden on desktop where the
+   full nav already shows one */
+.nav-cta--bar { display: none; }
+@media (max-width: 680px) {
+  .nav-cta--bar {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 0.7rem;
+    font-size: 0.78rem;
+    padding: 0.5em 0.85em;
+    white-space: nowrap;
+  }
+  .nav-inner { gap: 0.6rem; }
+}
+@media (max-width: 390px) {
+  .nav-logo-tick { display: none; }
+  .nav-logo-text { font-size: 1.08rem; }
+  .nav-cta--bar { font-size: 0.74rem; padding: 0.5em 0.7em; }
+}
+@media (max-width: 345px) {
+  .nav-logo-text { font-size: 0.98rem; }
+  .nav-cta--bar { font-size: 0.7rem; padding: 0.45em 0.6em; margin-right: 0.45rem; }
+  .nav-inner { gap: 0.4rem; }
+}
 
 .nav-burger {
   display: none;
@@ -1213,6 +1238,13 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 .form-error { color: var(--no); font-size: 0.9rem; }
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .form-privacy {
   font-family: var(--font-mono);
   font-size: 0.7rem;

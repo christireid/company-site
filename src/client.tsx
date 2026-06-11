@@ -2,6 +2,7 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
 import Accessibility from './pages/Accessibility'
+import Privacy from './pages/Privacy'
 import Specimen from './pages/Specimen'
 import './styles/globals.css'
 
@@ -12,6 +13,7 @@ window.scrollTo(0, 0)
 function route() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/'
   if (path === '/accessibility') return <Accessibility />
+  if (path === '/privacy') return <Privacy />
   if (path === '/dev/specimen') return <Specimen />
   return <App />
 }

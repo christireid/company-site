@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
+/* Order matches the page's scroll order so the scrollspy highlight
+   travels left to right. */
 const LINKS = [
-  { label: 'Approach', href: '#section-product' },
   { label: 'Services', href: '#section-services' },
+  { label: 'Approach', href: '#section-product' },
   { label: 'Process', href: '#section-process' },
   { label: 'FAQ', href: '#section-faq' },
   { label: 'About', href: '#section-about' },
@@ -70,6 +72,12 @@ export default function Nav() {
             Book a diagnostic
           </a>
         </div>
+
+        {/* Compact CTA that stays visible on phones, where the full nav
+            collapses behind the burger — the page's only persistent CTA. */}
+        <a href="#section-contact" className="nav-cta nav-cta--bar" onClick={scrollTo('#section-contact')}>
+          Book a diagnostic
+        </a>
 
         <button
           className={`nav-burger ${menuOpen ? 'open' : ''}`}

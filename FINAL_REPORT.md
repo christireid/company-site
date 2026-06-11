@@ -41,6 +41,17 @@ FAQ #1; nav "Implementation" renamed "Approach"; Contact moved to the deep surfa
 the practice loop. Spot illustration, Lottie/Rive, and decorative animation were considered
 and declined (see commit + chat rationale: consistency risk, runtime weight, pedagogy rule).
 
+**Second persona review (multi-perspective), implemented:** persistent "Book a diagnostic"
+CTA in the mobile nav bar (previously hidden behind the burger — the phone-majority
+audience had no visible CTA after the hero); nav/footer links reordered to match scroll
+order so the scrollspy travels left-to-right; `/privacy` page (minimum-collection policy,
+no analytics/cookies — formalizing the "no list" promise for procurement) linked in the
+footer and sitemap; JSON-LD `ProfessionalService` structured data; `sitemap.xml` +
+robots reference; honeypot spam protection on the contact form (client field + server-side
+check in `api/send-email.ts`). Verified: zero nav overflow at 320/390px.
+Deferred to owner (copy): consolidating the two ✕/✓ ledgers, cutting manifesto chips,
+trimming the mobile capability strip, settling the "we" voice vs named principal.
+
 *[VERIFY] from this pass:* refine the principal bio wording/facts and add a photograph if
 desired (the monogram card has a natural slot); confirm the PE portfolio-wide assessment
 is an engagement shape you'll take; confirm "Approach" as the nav label.

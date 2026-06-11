@@ -9,7 +9,7 @@ const INTERESTS = [
 ]
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', org: '', interest: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', org: '', interest: '', message: '', website: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -84,6 +84,18 @@ export default function Contact() {
             ) : (
               <form className="contact-form" onSubmit={handleSubmit} noValidate>
                 <p className="form-kicker">The 45-minute diagnostic starts here.</p>
+
+                {/* Honeypot — invisible to humans, irresistible to bots */}
+                <label className="hp-field" aria-hidden="true">
+                  Website
+                  <input
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={form.website}
+                    onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+                  />
+                </label>
                 <div className="form-row">
                   <label className="form-label">
                     Name

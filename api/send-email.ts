@@ -6,7 +6,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { name, email, org, interest, message } = req.body ?? {}
+  const { name, email, org, interest, message, website } = req.body ?? {}
+
+  // Honeypot: "website" is invisible to humans — anything in it is a bot.
+  // Answer 200 so the bot believes it succeeded.
+  if (website) {
+    return res.status(200).json({ ok: true })
+  }
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields: name, email, message' })
