@@ -92,7 +92,7 @@ Dark mode: **not built** (explicitly deferred).
 | Higher-ed case detail | Kept as written; flagged — soften if the engagement is identifiable |
 | LegalTech "zero churn" case | **Cut** (Copy v2's own recommendation absent verification) |
 | FAQ #8 pricing | Included (Copy v2 recommends) |
-| Booking URL | None exists — all diagnostic CTAs target `#section-contact`; swap to a scheduler URL when one exists |
+| Booking URL | **Owner decision: no scheduler.** All diagnostic CTAs target `#section-contact` permanently; the form kicker ("The 45-minute diagnostic starts here") bridges the CTA to the form |
 
 ## 7. Page/route map
 

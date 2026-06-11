@@ -58,7 +58,7 @@
 | Headquarters | New York, NY |
 | Type | Privately held |
 | Founded | 2025 |
-| Custom button | **Visit website** → codeclarity.ai *(switch to the diagnostic booking URL once one exists; "Book an appointment" is the better button then)* |
+| Custom button | **Visit website** → codeclarity.ai |
 
 ## 5. Specialties (max 20 — these are search keywords, not prose)
 
@@ -132,5 +132,4 @@ over pages. Consequence for a principal-led practice:
 
 - "50+ teams upskilled" has been retired sitewide (unsourced) — do not reintroduce it in posts unless a count is documented.
 - All metric displays and case studies were removed from the site (owner decision, June 2026). Posts should follow the same discipline: no stat blocks, no engagement anecdotes beyond what's contractually publishable — receipts are cited research and contractual commitments only.
-- Booking URL for the custom button when the diagnostic scheduler exists.
 - Cover image to be produced from the site's token system (I can generate the SVG/PNG on request).
