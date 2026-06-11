@@ -7,6 +7,11 @@
 > AI Training & Capability**; all "we build/ship/deploy" offering language was replaced
 > with planning/recommendation/oversight language. Engineering past stays as credibility
 > substrate only. See FINAL_REPORT §0 for the full change list.
+>
+> **Voice (owner decision, June 2026): the house voice is "we"** — everywhere, including
+> the manifesto — even though the practice is principal-led. The About section reconciles
+> the two ("the practice of Christi Reid… every engagement is principal-led"). On the
+> founder's personal LinkedIn, "I" speaks about her and "we" about the practice.
 
 ## 0. Document precedence (the load-bearing call)
 

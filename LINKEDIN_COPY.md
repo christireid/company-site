@@ -102,6 +102,24 @@ Optionally, right-aligned in Cormorant italic: *A decision, not a deck.*
 
 ---
 
+## Channel strategy (added June 2026, from current research)
+
+LinkedIn now distributes company-page posts to roughly **2–5% of followers**, while
+personal profiles get **5–10x the reach** — the algorithm deliberately favors people
+over pages. Consequence for a principal-led practice:
+
+- **The founder profile is the distribution channel; this page is the credibility anchor.**
+  The page exists so that the profile's "Founder, Code & Clarity" line resolves to
+  something real, complete, and on-brand. Completeness itself matters (~30% more views
+  for fully filled pages).
+- Post to the page 1–3x/week max, then **reshare from the founder profile with one added
+  sentence** — the reshare is where the audience actually is.
+- Monthly mix (3-2-1): three posts that teach, two that annotate a cited source
+  (MIT, McKinsey, DataCamp), one honest-disqualification story.
+- Engage with replies in the first hour — that's the algorithm's evaluation window.
+- Companion document: `LINKEDIN_FOUNDER_PROFILE.md` (headline, About, experience entry,
+  Featured strategy, personal banner, first post).
+
 ## Voice notes for future posts (so the page doesn't drift)
 
 - Open with the verdict. Never open with "We're excited to announce."
