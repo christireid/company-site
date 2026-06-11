@@ -1,5 +1,12 @@
 # QA_REPORT — Phase 6 Gauntlet
 
+> **Mobile hardening addendum (June 2026):** audited at 320 / 360 / 390 / 430px —
+> zero horizontal overflow at every width; zero tap targets under 24×24 after padding
+> fixes (footer + email links); form inputs raised to 16px so iOS Safari no longer
+> zooms on focus; the "Where we sit" SVG (labels rendered 5–10px on phones) is replaced
+> below 560px by a stacked HTML variant with full-size type, same aria description.
+> Audit script: `scripts/mobile-audit.mjs`.
+
 *Run against the production build (`vite build` → `vite preview`), June 2026. Tooling: Playwright (preinstalled Chromium 141), Lighthouse 12 (mobile emulation, simulated throttling), programmatic WCAG contrast math.*
 
 ## 1. Visual pass (Playwright)

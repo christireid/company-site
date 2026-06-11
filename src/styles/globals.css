@@ -910,6 +910,42 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   letter-spacing: 0.12em;
   fill: var(--ink-muted);
 }
+/* Stacked mobile variant — hidden on wide screens */
+.wws-stack { display: none; }
+.wws-m-box {
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  background: var(--paper);
+  padding: 0.85rem 1rem;
+  text-align: center;
+}
+.wws-m-box--us { border: 1.5px solid var(--terracotta); }
+.wws-m-name { display: block; font-weight: 500; color: var(--ink); font-size: 1rem; }
+.wws-m-sub {
+  display: block;
+  margin-top: 0.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.wws-m-flow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+.wws-m-flow span:last-child { color: var(--terracotta-ink); text-align: right; }
+@media (max-width: 560px) {
+  .wws-svg { display: none; }
+  .wws-stack { display: block; }
+}
+
 .wws-caption {
   margin: 0.4rem auto 0;
   text-align: center;
@@ -1141,7 +1177,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .form-input {
   font-family: var(--font-body);
-  font-size: 0.98rem;
+  font-size: 1rem; /* ≥16px or iOS Safari zooms the page on focus */
   color: var(--ink);
   background: var(--paper);
   border: 1px solid var(--rule-strong);
@@ -1234,9 +1270,17 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   gap: 1.4rem;
 }
 .footer-links a {
+  display: inline-block;
+  padding: 0.35rem 0; /* keeps tap targets ≥ 24px */
   font-size: 0.88rem;
   color: var(--ink-body);
   text-decoration: none;
+}
+.footer-subline a,
+.about-meta a {
+  display: inline-block;
+  padding: 0.3rem 0;
+  margin: -0.3rem 0;
 }
 .footer-links a:hover { color: var(--terracotta-ink); text-decoration: underline; text-underline-offset: 3px; }
 

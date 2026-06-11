@@ -97,6 +97,34 @@ function WhereWeSit() {
         <polygon className="loop-arrow" points={arrow(367, 113, -1)} />
         <text className="loop-edge-note" x="410" y="146" textAnchor="middle">evidence &amp; evals</text>
       </svg>
+      {/* Stacked variant for narrow screens — the SVG's labels render
+          below legible size on phones, so the layout changes, not the scale. */}
+      <div
+        className="wws-stack"
+        role="img"
+        aria-label="Diagram of the engagement model: Code and Clarity sits between your team and whoever builds — the decision and training flow to your team, acceptance criteria flow to the builder, and evidence and evaluations flow back."
+      >
+        <div className="wws-m-box">
+          <span className="wws-m-name">Your team</span>
+          <span className="wws-m-sub">Owns the outcome</span>
+        </div>
+        <div className="wws-m-flow">
+          <span>the problem ↓</span>
+          <span>↑ decision &amp; training</span>
+        </div>
+        <div className="wws-m-box wws-m-box--us">
+          <span className="wws-m-name">Code <span className="amp">&amp;</span> Clarity</span>
+          <span className="wws-m-sub">Independent advisor</span>
+        </div>
+        <div className="wws-m-flow">
+          <span>acceptance criteria ↓</span>
+          <span>↑ evidence &amp; evals</span>
+        </div>
+        <div className="wws-m-box">
+          <span className="wws-m-name">The build</span>
+          <span className="wws-m-sub">Vendor or in-house</span>
+        </div>
+      </div>
       <p className="wws-caption">
         We sit on your side of the table — hired by you, independent of every vendor.
       </p>
