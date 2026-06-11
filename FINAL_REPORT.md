@@ -100,7 +100,7 @@ The three source documents conflict. Resolution, argued in `DESIGN_DECISIONS.md`
 | Higher-ed case detail | Kept verbatim | Confirm the engagement isn't identifiable at this detail level |
 | LegalTech "zero churn" case | **Cut** (copy doc's own recommendation) | Restore only if the churn claim is substantiated |
 | FAQ #8 pricing | Included (copy doc recommends) | Confirm |
-| Booking URL | All diagnostic CTAs target the contact form | Swap to a scheduler URL when one exists (one constant in each CTA) |
+| Booking URL | All diagnostic CTAs target the contact form | **Resolved — owner decision: no scheduler; the contact form is the permanent destination** |
 | Footer email | `hello@codeclarity.ai` on the accessibility page | Confirm the address |
 
 ## 5. QA numbers
