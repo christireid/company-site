@@ -30,6 +30,10 @@ footer gained a direct email. Lighthouse after the pass: 97 / 100 / 100 / 100, L
   alternates surfaces perfectly (deep/paper) end to end. Proof on the site is now contractual
   facts + cited research only; reintroduce a Results section only when publishable engagements exist.
 - Footer/accessibility email `hello@codeclarity.ai` — still [VERIFY]: confirm the inbox exists.
+- **All metric displays removed by owner decision** (follow-up to the case-study removal):
+  the proof strip, the manifesto stats row, and the contact stat chips are gone. Numbers now
+  appear only inside prose (the "10+ years" credibility line, the one-business-day response
+  promise, cited MIT/McKinsey/DataCamp research). No stat blocks remain anywhere on the site.
 
 *"The Quiet Publication" applied to the live single-page site, with Site Copy v2 as canonical text. June 2026.*
 

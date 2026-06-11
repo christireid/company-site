@@ -64,16 +64,6 @@ export default function Contact() {
               <span className="contact-chip">Response within one business day</span>
             </div>
 
-            <div className="contact-stats">
-              <div>
-                <span className="contact-stat-val">1 business day</span>
-                <span className="contact-stat-label">First response</span>
-              </div>
-              <div>
-                <span className="contact-stat-val">In writing</span>
-                <span className="contact-stat-label">Scope &amp; pricing before work begins</span>
-              </div>
-            </div>
           </Reveal>
 
           <Reveal delay={0.1}>

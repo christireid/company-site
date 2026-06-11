@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import ProofStrip from './components/ProofStrip'
 import ManifestoBreak from './components/ManifestoBreak'
 import Services from './components/Services'
 import ProductSignal from './components/ProductSignal'
@@ -22,7 +21,6 @@ export default function App() {
 
       <main id="main">
         <Hero />
-        <ProofStrip />
         <ManifestoBreak />
         <Services />
         <ProductSignal />
