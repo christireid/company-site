@@ -10,8 +10,6 @@ export default defineConfig({
         manualChunks: {
           // Vendor chunk: React core
           'vendor-react': ['react', 'react-dom'],
-          // Animation library
-          'vendor-framer': ['framer-motion'],
         },
       },
     },

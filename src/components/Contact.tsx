@@ -1,44 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
-import { onFrame, removeFrame, useInView } from '../hooks/useAnimation'
+import React, { useState } from 'react'
+import { Reveal } from './shared'
 
-
-/* ── Availability card: pulsing status + key stats laid out clearly ── */
-function AvailabilityCard() {
-  return (
-    <div className="availability-card">
-      <div className="avail-row">
-        <span className="avail-pulse" aria-hidden="true" />
-        <span className="avail-status">Accepting new engagements</span>
-      </div>
-      <div className="avail-stats">
-        {[
-          { val: '< 24h', label: 'First response' },
-          { val: 'Fixed', label: 'Scoped pricing' },
-        ].map(s => (
-          <div key={s.label} className="avail-stat">
-            <span className="avail-stat-val">{s.val}</span>
-            <span className="avail-stat-label">{s.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
+const INTERESTS = [
+  'AI Implementation Strategy',
+  'AI Audits & Governance',
+  'AI Training & Capability',
+  "Not sure yet — that's what the diagnostic is for",
+]
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', org: '', interest: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', org: '', interest: '', message: '', website: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-
-  const interests = [
-    'AI Strategy & Policy',
-    'Training & Capability Transfer',
-    'AI Implementation / Pilot Build',
-    'Not sure yet — let\'s talk',
-  ]
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -66,62 +40,62 @@ export default function Contact() {
   }
 
   return (
-    <section id="section-contact" className="section section-contact" aria-label="Contact" style={{ position: 'relative', overflow: 'hidden' }}>
-      <div className="section-content" style={{ position: 'relative', zIndex: 2 }}>
-        <div className="contact-layout">
-          <motion.div
-            className="contact-left"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="section-eyebrow">Get in touch</div>
+    <section id="section-contact" className="section section--deep" aria-label="Contact">
+      <div className="section-content">
+        <div className="contact-grid">
+          <Reveal>
+            <span className="kicker">Get in touch</span>
             <h2 className="section-title">
-              A conversation,<br />
-              <em className="text-prism">not a sales process.</em>
+              A conversation,
+              <br />
+              <em>not a sales process.</em>
             </h2>
-            <p className="contact-lede">
-              Tell us what you're trying to solve. We'll tell you honestly
-              whether we're the right fit — and if we're not, we'll point
-              you toward who is. No deck. No proposal until you want one.
+            <p className="contact-intro">
+              Tell us what you&rsquo;re trying to solve. We&rsquo;ll respond within one business
+              day with a straight read — including &ldquo;you don&rsquo;t need us for this&rdquo;
+              when that&rsquo;s the truth.
             </p>
-            <p className="contact-lede" style={{ opacity: 0.72 }}>
-              Not sure what you need yet? That's the best possible
-              starting point. Most good engagements begin with
-              'we know something needs to change, we're not sure what'.
-              We respond within one business day.
+            <p className="contact-intro">
+              The diagnostic itself is 45 minutes. You bring the problem; you leave with a
+              straight answer — whether we can help, what the engagement would produce, and
+              what it costs.
             </p>
 
-            <div className="contact-signals">
-              <div className="contact-signal">
-                <span className="signal-dot green" />
-                <span>Accepting new engagements — limited capacity</span>
-              </div>
-              <div className="contact-signal">
-                <span>Response within one business day</span>
-              </div>
+            <div className="contact-chips">
+              <span className="contact-chip">
+                <span className="status-dot" aria-hidden="true" />
+                Accepting new engagements — limited capacity
+              </span>
+              <span className="contact-chip">Response within one business day</span>
             </div>
 
-            {/* Availability card */}
-            <AvailabilityCard />
-          </motion.div>
+          </Reveal>
 
-          <motion.div
-            className="contact-right"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.0, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <Reveal delay={0.1}>
             {submitted ? (
-              <div className="contact-success">
-                <div className="success-icon">✦</div>
+              <div className="contact-success" role="status">
                 <h3>Message received.</h3>
-                <p>We'll respond within one business day. Looking forward to the conversation — expect directness, not a sales pitch.</p>
+                <p>
+                  We&rsquo;ll respond within one business day. Expect directness, not a sales
+                  sequence — and if we&rsquo;re the wrong fit, we&rsquo;ll tell you who to call
+                  instead.
+                </p>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit} noValidate>
+                <p className="form-kicker">The 45-minute diagnostic starts here.</p>
+
+                {/* Honeypot — invisible to humans, irresistible to bots */}
+                <label className="hp-field" aria-hidden="true">
+                  Website
+                  <input
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={form.website}
+                    onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+                  />
+                </label>
                 <div className="form-row">
                   <label className="form-label">
                     Name
@@ -148,7 +122,7 @@ export default function Contact() {
                 </div>
 
                 <label className="form-label">
-                  Organisation
+                  Organization
                   <input
                     className="form-input"
                     type="text"
@@ -158,19 +132,22 @@ export default function Contact() {
                   />
                 </label>
 
-                <label className="form-label">
+                <div className="form-label" role="group" aria-label="What are you exploring?">
                   What are you exploring?
                   <div className="interest-grid">
-                    {interests.map(opt => (
+                    {INTERESTS.map(opt => (
                       <button
                         key={opt}
                         type="button"
                         className={`interest-btn ${form.interest === opt ? 'active' : ''}`}
+                        aria-pressed={form.interest === opt}
                         onClick={() => setForm(f => ({ ...f, interest: opt }))}
-                      >{opt}</button>
+                      >
+                        {opt}
+                      </button>
                     ))}
                   </div>
-                </label>
+                </div>
 
                 <label className="form-label">
                   Tell us more
@@ -184,20 +161,19 @@ export default function Contact() {
                 </label>
 
                 {error && (
-                  <p style={{ color: 'hsl(0,70%,65%)', fontSize: '0.9rem', margin: '0 0 0.75rem' }} role="alert">
+                  <p className="form-error" role="alert">
                     {error}
                   </p>
                 )}
 
-                <button type="submit" className="hero-cta-primary form-submit" disabled={loading} aria-disabled={loading}>
-                  <span className="btn-text">{loading ? 'Sending…' : 'Send message →'}</span>
-                  <span className="btn-shimmer" />
+                <button type="submit" className="btn btn--primary" disabled={loading} aria-disabled={loading}>
+                  {loading ? 'Sending…' : 'Send message →'}
                 </button>
+                <p className="form-privacy">No list, no sequence — your message goes to a person.</p>
               </form>
             )}
-          </motion.div>
+          </Reveal>
         </div>
-
       </div>
     </section>
   )

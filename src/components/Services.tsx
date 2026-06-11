@@ -1,128 +1,102 @@
-import React, { useRef } from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from '../hooks/useAnimation'
+import React from 'react'
+import { Reveal, SectionHeader, scrollToId } from './shared'
 
-/* Animated bar chart — deliverable weight visualisation */
-function DeliverableChart({ items, accent }: { items: string[]; accent: string }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-40px' })
-  const widths = [92, 78, 85, 68, 80, 72, 88, 65]
-
-  // Disable animation on mobile for performance
-  const [isMobile, setIsMobile] = React.useState(false)
-  React.useEffect(() => {
-    setIsMobile(window.innerWidth < 680)
-    const handleResize = () => setIsMobile(window.innerWidth < 680)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  return (
-    <div ref={ref} className="svc-del-chart">
-      {items.map((item, i) => (
-        <div key={item} className="svc-del-row">
-          <span className="svc-del-name">{item}</span>
-          <div className="svc-del-bar-track">
-            <motion.div
-              className="svc-del-bar-fill"
-              style={{ background: accent }}
-              initial={isMobile ? { width: `${widths[i % widths.length]}%` } : { width: 0 }}
-              animate={inView && !isMobile ? { width: `${widths[i % widths.length]}%` } : {}}
-              transition={isMobile ? { duration: 0 } : { duration: 0.7, delay: 0.1 + i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-            />
-          </div>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-const services = [
+const SERVICES = [
   {
-    id: 'strategy', num: '01', icon: '◈',
-    title: 'AI Strategy, Policy & Governance',
+    id: 'implementation',
+    num: '01',
+    title: 'AI Implementation Strategy',
+    headline: 'The decision everything else depends on.',
+    insight:
+      "MIT's enterprise research found AI tools built with external partners succeed roughly twice as often as internal builds — and that the failures were integration failures, not model failures. The gap between a board-ready demo and a system people rely on daily is where most AI budgets go to die. Which platform, which partner, and what scope are the decisions that determine which side of that gap you land on.",
+    body:
+      "We turn \"we should do something with AI\" into a plan your team or vendor can execute: requirements defined against your actual systems, vendor platform versus custom build versus hybrid recommended on fit and three-year cost at real headcount, a reference architecture for your environment, and acceptance criteria precise enough to hold whoever builds it accountable — guardrails, observability, and an eval suite written into the definition of done. We don't take the build, so the recommendation has nothing to sell but the answer — and we'll happily recommend the smaller scope when it's the right one.",
+    deliverables: [
+      'Implementation roadmap & scope definition', 'Requirements & readiness assessment',
+      'Vendor evaluation & selection', 'Build vs buy recommendation',
+      'Reference architecture & system design', 'Pilot & evaluation design',
+      'Acceptance criteria & vendor oversight', 'Complete knowledge transfer',
+    ],
+    cta: 'Plan the implementation →',
+    accent: 'var(--terracotta)',
+    folioInk: 'var(--terracotta-ink)',
+  },
+  {
+    id: 'governance',
+    num: '02',
+    title: 'AI Audits & Governance',
     headline: 'A decision, not a deck.',
-    insight: "The single most expensive AI mistake isn't choosing the wrong model. It's starting before you've defined what success actually looks like — then hiring consultants to validate what you already decided.",
-    body: "We provide honest technical assessments of where AI creates real, specific value for your organization — and where it doesn't. Comprehensive vendor evaluation against your requirements, regulatory readiness (EU AI Act, sector-specific compliance), build vs buy analysis with defensible recommendations, and governance frameworks that survive contact with reality. A roadmap precise enough to execute without us. One point of contact who can actually build what they recommend.",
-    deliverables: ['AI readiness assessment','Vendor evaluation & selection','Build vs buy analysis','Governance & compliance framework','EU AI Act regulatory mapping','Risk assessment & guardrails','Strategic roadmap','Executive knowledge transfer'],
-    cta: 'Get a straight answer →', accent: 'hsl(17, 85%, 62%)', // Warm orange from hero gradient
+    insight:
+      "McKinsey tested 25 organizational attributes against AI's bottom-line impact. The strongest predictor wasn't budget or model choice — it was whether the company redesigned its workflows. Yet one in six organizations still has no C-level owner for AI. Most strategy engagements never touch either fact.",
+    body:
+      "We audit what you actually have — codebase, contracts, workflows, data boundaries — and tell you where AI creates specific value and where it doesn't. Vendor evaluation modeled on three-year TCO at your real headcount, not the demo price — in past assessments, the spread between deployment models has run to multiples for identical use cases. Governance written for systems that act, not just systems that answer — mapped to the EU AI Act and to the data boundaries your sector lives inside, FERPA included, before the regulator asks. The roadmap is precise enough to execute without us.",
+    deliverables: [
+      'AI readiness audit', 'Vendor evaluation & TCO modeling', 'Build vs buy analysis',
+      'Governance & compliance framework', 'EU AI Act regulatory mapping', 'Risk assessment & guardrails',
+      'Executable roadmap', 'Executive knowledge transfer',
+    ],
+    cta: 'Get a straight answer →',
+    accent: 'var(--gold)',
+    folioInk: 'var(--gold)',
   },
   {
-    id: 'training', num: '02', icon: '◎',
-    title: 'Training & Capability Building',
-    headline: 'Still using it six months later.',
-    insight: "Most AI training produces confident-sounding teams who quietly return to their old workflows by the following week. The problem isn't the tools — it's training built around information transfer instead of actual behavioral change and skill formation.",
-    body: "We design learning programmes around your team's real work, on your real problems, with real feedback loops. Technical depth you'd expect from engineers who ship. Pedagogical craft from four years building developer curricula that stuck. Your people leave the programme using these tools in their daily work — not just knowing about them. Institutional capability that persists beyond any individual.",
-    deliverables: ['Custom curriculum design','Self-paced learning materials','Live workshops (half-day to multi-day)','LLM & AI tool training','Workflow design & optimization','Institutional knowledge capture','Assessment & competency frameworks','Mentoring & coaching programmes'],
-    cta: 'Build real capability →', accent: 'hsl(181, 85%, 75%)', // Bright cyan from hero gradient
-  },
-  {
-    id: 'development', num: '03', icon: '⬡',
-    title: 'AI Implementation',
-    headline: 'The right implementation for your needs.',
-    insight: "The gap between a demo that impresses a board and a system users actually rely on is enormous. Most AI projects live in that gap forever. We implement production-ready solutions — whether that means rigorous vendor integration, selective custom development, or hybrid approaches.",
-    body: "End-to-end AI implementation: we evaluate your requirements, select the right approach (vendor platform, custom build, or hybrid), architect the solution, integrate with your existing systems, and deploy to production. From model selection through to operational handover — the right solution for your environment, implemented correctly. Not on maximizing custom development hours.",
-    deliverables: ['Implementation planning','Vendor solution integration','Selective custom development','LLM & RAG system architecture','Production deployment & operations','System integration & data pipelines','Client-facing interfaces','Complete knowledge transfer'],
-    cta: 'Start implementing →', accent: 'hsl(37, 85%, 74%)', // Warm peach from hero gradient
+    id: 'training',
+    num: '03',
+    title: 'AI Training & Capability',
+    headline: 'Still in use six months later.',
+    insight:
+      'Companies raised AI tool spending 23% in late 2025 while cutting AI training budgets 18% — yet organizations with mature AI literacy programs are nearly twice as likely to see significant ROI. Software nobody knows how to use is shelfware with a subscription fee. Most training fails because it transfers information instead of building behavior.',
+    body:
+      "Programs designed around your team's real work, real tools, and real feedback loops — built by engineers who use these tools daily and have spent years designing developer education that stuck. Your people leave using AI in their actual workflows, with the judgment to know when not to. The capability belongs to the institution, not to the individual who happened to attend.",
+    deliverables: [
+      'Custom curriculum design', 'Live workshops (half-day to multi-day)', 'Self-paced learning systems',
+      'LLM & AI tool training', 'Workflow design & optimization', 'Assessment & competency frameworks',
+      'Institutional knowledge capture', 'Mentoring & coaching programs',
+    ],
+    cta: 'Build capability that sticks →',
+    accent: 'var(--slate)',
+    folioInk: 'var(--slate)',
   },
 ]
 
-function ServiceCard({ svc, i }: { svc: typeof services[0]; i: number }) {
-  return (
-    <motion.div className="service-card reveal-on-scroll"
-      style={{ '--svc-accent': svc.accent } as any}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
-      transition={{ delay: i * 0.12, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
-
-      <div className="svc-card-top">
-        <div className="svc-num-row">
-          <span className="svc-icon">{svc.icon}</span>
-          <span className="svc-num">{svc.num}</span>
-        </div>
-        <h3 className="svc-title">{svc.title}</h3>
-        <p className="svc-headline">{svc.headline}</p>
-      </div>
-
-      <div className="svc-insight" style={{ borderLeftColor: svc.accent + '55' }}>
-        <span className="svc-insight-mark" style={{ color: svc.accent }}>❝</span>
-        <span>{svc.insight}</span>
-      </div>
-
-      <p className="svc-body-short">{svc.body}</p>
-
-      <div className="svc-deliverables">
-        <div className="svc-del-label">What you get</div>
-        <DeliverableChart items={svc.deliverables} accent={svc.accent} />
-      </div>
-
-      <a href="#section-contact" className="svc-cta"
-        onClick={e => { e.preventDefault(); document.getElementById('section-contact')?.scrollIntoView({ behavior: 'smooth' }) }}>
-        {svc.cta}
-      </a>
-
-      <div className="svc-card-glow" aria-hidden="true"/>
-      <div className="svc-shimmer" aria-hidden="true"/>
-    </motion.div>
-  )
-}
-
 export default function Services() {
   return (
-    <section id="section-services" className="section section-services" aria-label="Services">
-      <div className="section-content" style={{ position: 'relative', zIndex: 2 }}>
-        <motion.div className="section-header slide-up"
-          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
-          <div className="section-eyebrow">Three practice areas</div>
-          <h2 className="section-title">What we do.<br/><em className="text-prism">What you get.</em></h2>
-          <p className="section-lead">Strategy without execution is a document. Training without strategy is wasted. Software without the capability to maintain it is a liability. Each service makes the others stronger.</p>
-        </motion.div>
-        <div className="services-grid">
-          {services.map((svc, i) => <ServiceCard key={svc.id} svc={svc} i={i} />)}
-        </div>
+    <section id="section-services" className="section" aria-label="Services">
+      <div className="section-content">
+        <SectionHeader
+          kicker="Three practices"
+          title="What we do."
+          em="What you get."
+          lead="The implementation plan keeps the strategy honest. The strategy makes the training relevant. The training makes the plan survivable after we leave. One practice — because the handoff between three separate vendors is where AI initiatives actually die."
+        />
+
+        {SERVICES.map((svc, i) => (
+          <Reveal
+            key={svc.id}
+            delay={0.05 * i}
+            className="chapter"
+            style={{ '--chapter-accent': svc.accent, '--chapter-folio-ink': svc.folioInk } as React.CSSProperties}
+          >
+            <div>
+              <span className="chapter-folio">{svc.num} — Practice</span>
+              <h3 className="chapter-title">{svc.title}</h3>
+              <p className="chapter-headline">{svc.headline}</p>
+              <a href="#section-contact" className="link-quiet chapter-cta" onClick={scrollToId('section-contact')}>
+                {svc.cta}
+              </a>
+            </div>
+            <div>
+              <p className="chapter-insight">{svc.insight}</p>
+              <p className="chapter-body">{svc.body}</p>
+              <div className="chapter-deliverables">
+                <div className="chapter-deliverables-label">What you get</div>
+                <ul className="deliverable-list">
+                  {svc.deliverables.map(d => <li key={d}>{d}</li>)}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   )

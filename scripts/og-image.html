@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 500;
+    src: url('../public/fonts/cormorant-garamond-italic-latin.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 500 600;
+    src: url('../public/fonts/cormorant-garamond-latin.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../public/fonts/dm-mono-medium-latin.woff2') format('woff2');
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* Open Graph card: 1200 x 630 */
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #faf9f5;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stack {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 0.22em;
+    color: #605c53;
+  }
+  .wordmark .amp { color: #a8451f; }
+  .wordmark .tick {
+    width: 34px;
+    height: 3px;
+    background: linear-gradient(90deg, #c2552c 0%, #e8c87f 55%, #8a6415 100%);
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 104px;
+    line-height: 1;
+    color: #141413;
+    text-align: center;
+  }
+  .headline .accent { color: #a8451f; }
+
+  .kicker {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.18em;
+    color: #605c53;
+  }
+  .kicker .dot { color: #c2552c; padding: 0 8px; }
+
+  .rule {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #c2552c 0%, #e8c87f 55%, #8a6415 100%);
+  }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div class="wordmark">
+      <span class="tick"></span>
+      <span>CODE <span class="amp">&amp;</span> CLARITY</span>
+      <span class="tick"></span>
+    </div>
+    <div class="headline">A decision, <span class="accent">not a deck.</span></div>
+    <div class="kicker">
+      <span>AI IMPLEMENTATION STRATEGY</span><span class="dot">·</span>
+      <span>AUDITS &amp; GOVERNANCE</span><span class="dot">·</span>
+      <span>TRAINING</span>
+    </div>
+  </div>
+  <div class="rule"></div>
+</body>
+</html>

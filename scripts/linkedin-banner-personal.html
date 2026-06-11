@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 500;
+    src: url('../public/fonts/cormorant-garamond-italic-latin.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../public/fonts/dm-mono-medium-latin.woff2') format('woff2');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  /* LinkedIn personal banner: 1584 x 396. Profile photo overlaps the
+     bottom-left on desktop; mobile crops the outer edges — composition
+     sits center-right of the safe zone. */
+  body { width: 1584px; height: 396px; background: #faf9f5; position: relative; overflow: hidden; }
+  .stack {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding-left: 220px; /* clear of the photo overlap zone */
+    gap: 26px;
+  }
+  .headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic; font-weight: 500;
+    font-size: 88px; line-height: 1; color: #141413;
+  }
+  .headline .accent { color: #a8451f; }
+  .kicker {
+    display: flex; align-items: center; gap: 22px;
+    font-family: 'DM Mono', monospace; font-weight: 500;
+    font-size: 17px; letter-spacing: 0.18em; color: #605c53;
+  }
+  .kicker .tick { width: 40px; height: 3px; background: linear-gradient(90deg, #c2552c 0%, #e8c87f 55%, #8a6415 100%); }
+  .kicker .dot { color: #c2552c; padding: 0 4px; }
+  .url {
+    position: absolute; right: 40px; bottom: 24px;
+    font-family: 'DM Mono', monospace; font-weight: 500;
+    font-size: 16px; letter-spacing: 0.1em; color: #605c53;
+  }
+  .rule { position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
+    background: linear-gradient(90deg, #c2552c 0%, #e8c87f 55%, #8a6415 100%); }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div class="headline">Engineers <span class="accent">who consult.</span></div>
+    <div class="kicker">
+      <span class="tick"></span>
+      <span>AI IMPLEMENTATION STRATEGY</span><span class="dot">·</span>
+      <span>AUDITS &amp; GOVERNANCE</span><span class="dot">·</span>
+      <span>TRAINING &amp; CAPABILITY</span>
+      <span class="tick"></span>
+    </div>
+  </div>
+  <div class="url">codeclarity.ai</div>
+  <div class="rule"></div>
+</body>
+</html>

@@ -6,7 +6,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { name, email, org, interest, message } = req.body ?? {}
+  const { name, email, org, interest, message, website } = req.body ?? {}
+
+  // Honeypot: "website" is invisible to humans — anything in it is a bot.
+  // Answer 200 so the bot believes it succeeded.
+  if (website) {
+    return res.status(200).json({ ok: true })
+  }
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields: name, email, message' })
@@ -24,14 +30,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const TO   = 'christi@codeclarity.ai'
   // ────────────────────────────────────────────────────────────────────────
 
-  const subject = `New enquiry from ${name}${org ? ` · ${org}` : ''}`
+  const subject = `New inquiry from ${name}${org ? ` · ${org}` : ''}`
 
   const html = `
     <table style="font-family:sans-serif;font-size:15px;line-height:1.6;color:#1a1a1a;max-width:600px">
-      <tr><td><h2 style="margin:0 0 20px">New enquiry via Code &amp; Clarity</h2></td></tr>
+      <tr><td><h2 style="margin:0 0 20px">New inquiry via Code &amp; Clarity</h2></td></tr>
       <tr><td><strong>Name:</strong> ${escHtml(name)}</td></tr>
       <tr><td><strong>Email:</strong> <a href="mailto:${escHtml(email)}">${escHtml(email)}</a></td></tr>
-      ${org      ? `<tr><td><strong>Organisation:</strong> ${escHtml(org)}</td></tr>` : ''}
+      ${org      ? `<tr><td><strong>Organization:</strong> ${escHtml(org)}</td></tr>` : ''}
       ${interest ? `<tr><td><strong>Exploring:</strong> ${escHtml(interest)}</td></tr>` : ''}
       <tr><td style="padding-top:16px"><strong>Message:</strong><br>${escHtml(message).replace(/\n/g, '<br>')}</td></tr>
     </table>

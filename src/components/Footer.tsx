@@ -1,32 +1,45 @@
 import React from 'react'
 
+const LINKS = [
+  { label: 'Services', href: '#section-services' },
+  { label: 'Approach', href: '#section-product' },
+  { label: 'Process', href: '#section-process' },
+  { label: 'About', href: '#section-about' },
+  { label: 'Contact', href: '#section-contact' },
+]
+
 export default function Footer() {
   return (
     <footer className="site-footer" aria-label="Footer">
       <div className="footer-inner">
-        <div className="footer-brand">
-          <span className="nav-logo-mark">✦</span>
-          <span className="nav-logo-text">Code <span className="nav-logo-amp">&amp;</span> Clarity</span>
+        <div>
+          <p className="footer-line">
+            Code <span className="amp">&amp;</span> Clarity — engineers who consult. New York.
+          </p>
+          <span className="footer-subline">
+            AI implementation strategy, audits, governance, and training.
+          </span>
+          <span className="footer-subline">
+            <a href="mailto:hello@codeclarity.ai">hello@codeclarity.ai</a>
+          </span>
+          <span className="footer-subline">© {new Date().getFullYear()} Code &amp; Clarity</span>
         </div>
-        <p className="footer-tagline">
-          AI Strategy · Training · Implementation — fixed scope, clear exit, full capability transfer.
-        </p>
         <nav className="footer-links" aria-label="Footer navigation">
-          {[
-            { label: 'What we do', href: '#section-transform' },
-            { label: 'Services', href: '#section-services' },
-            { label: 'How We Work', href: '#section-process' },
-            { label: 'Contact', href: '#section-contact' },
-          ].map(l => (
-            <a key={l.label} href={l.href} className="footer-link"
-              onClick={e => { e.preventDefault(); document.querySelector(l.href)?.scrollIntoView({ behavior: 'smooth' }) }}>
+          {LINKS.map(l => (
+            <a
+              key={l.label}
+              href={l.href}
+              onClick={e => {
+                e.preventDefault()
+                document.querySelector(l.href)?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
               {l.label}
             </a>
           ))}
+          <a href="/accessibility">Accessibility</a>
+          <a href="/privacy">Privacy</a>
         </nav>
-        <p className="footer-copy">
-          © {new Date().getFullYear()} Code &amp; Clarity. All rights reserved.
-        </p>
       </div>
     </footer>
   )
