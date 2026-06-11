@@ -16,7 +16,7 @@ const PAIRS = [
   },
   {
     demo: 'Three vendors, four frameworks, zero accountability in the handoffs',
-    product: 'One practice: strategy, training, and build in the same room',
+    product: 'One practice: strategy, training, and implementation planning in the same room',
   },
   {
     demo: 'Governance written after the regulator asked',
@@ -28,7 +28,7 @@ const PAIRS = [
   },
   {
     demo: 'Software delivered; the ability to run it leaves with the consultants',
-    product: 'Code, docs, runbooks, and a trained team — the capability transfers, not just the repo',
+    product: 'A plan, the criteria to hold your vendor to, and a team trained to own what gets built',
   },
 ]
 
@@ -38,7 +38,10 @@ export default function ContrastBreak() {
       <div className="section-content">
         <SectionHeader kicker="Two ways this ends." title="Which one" em="is yours right now?" />
 
-        <Reveal className="ledger" style={{ marginTop: 0 }}>
+        <Reveal
+          className="ledger"
+          style={{ marginTop: 0, '--label-demo': '"The industry default"', '--label-product': '"With Code & Clarity"' } as React.CSSProperties}
+        >
           <div className="ledger-head">
             <span className="ledger-col-label ledger-col-label--demo">The industry default</span>
             <span className="ledger-col-label ledger-col-label--product">With Code &amp; Clarity</span>

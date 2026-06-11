@@ -8,32 +8,10 @@ const STATS = [
 ]
 
 const CHIPS = [
-  { label: 'AI Implementation', accent: 'var(--terracotta)' },
-  { label: 'Strategy, Audits & Governance', accent: 'var(--gold)' },
+  { label: 'AI Implementation Strategy', accent: 'var(--terracotta)' },
+  { label: 'Audits & Governance', accent: 'var(--gold)' },
   { label: 'Training & Capability', accent: 'var(--slate)' },
 ]
-
-const INDEX_1 = [
-  'Production LLM Systems', 'RAG Architecture', 'Agentic Pipelines',
-  'Vendor Integration', 'Scoped Builds', 'Full Handover',
-]
-const INDEX_2 = [
-  'Strategic Assessment', 'TCO Modeling', 'EU AI Act Compliance',
-  'Governance for Systems That Act', 'Capability Building', 'Knowledge Transfer',
-]
-
-function IndexLine({ items }: { items: string[] }) {
-  return (
-    <p className="index-strip">
-      {items.map((c, i) => (
-        <React.Fragment key={c}>
-          {i > 0 && <span className="dot" aria-hidden="true">·</span>}
-          <span>{c}</span>
-        </React.Fragment>
-      ))}
-    </p>
-  )
-}
 
 export default function ManifestoBreak() {
   return (
@@ -47,9 +25,9 @@ export default function ManifestoBreak() {
             We started Code &amp; Clarity because AI consulting was built backwards: strategy
             people who never deployed anything, advising engineering teams on deployment.
             We&rsquo;re <em>engineers who consult</em> — not consultants who learned about
-            engineering. We name trade-offs out loud, we put our recommendations in production,
-            and we&rsquo;d rather lose an engagement by being honest about fit than win one
-            with a deck.
+            engineering. We name trade-offs out loud, we only recommend what we could build
+            ourselves, and we&rsquo;d rather lose an engagement by being honest about fit than
+            win one with a deck.
           </blockquote>
         </Reveal>
 
@@ -69,10 +47,6 @@ export default function ManifestoBreak() {
                 {c.label}
               </span>
             ))}
-          </div>
-          <div className="manifesto-index">
-            <IndexLine items={INDEX_1} />
-            <IndexLine items={INDEX_2} />
           </div>
         </Reveal>
       </div>

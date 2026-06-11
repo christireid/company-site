@@ -2,6 +2,12 @@
 
 *Single reference for the rebuild. Direction 1, "The Quiet Publication," reconciled with Site Copy v2. Cited in commits as DD.*
 
+> **Revision, June 2026:** by owner decision the practice no longer sells builds.
+> Canonical taxonomy is now **AI Implementation Strategy · AI Audits & Governance ·
+> AI Training & Capability**; all "we build/ship/deploy" offering language was replaced
+> with planning/recommendation/oversight language. Engineering past stays as credibility
+> substrate only. See FINAL_REPORT §0 for the full change list.
+
 ## 0. Document precedence (the load-bearing call)
 
 The three source documents conflict in places. Precedence used throughout:

@@ -5,25 +5,26 @@ const SERVICES = [
   {
     id: 'implementation',
     num: '01',
-    title: 'AI Implementation',
-    headline: 'The part everyone else hands off.',
+    title: 'AI Implementation Strategy',
+    headline: 'The decision everything else depends on.',
     insight:
-      "MIT's enterprise research found AI tools built with external partners succeed roughly twice as often as internal builds — and that the failures were integration failures, not model failures. The gap between a board-ready demo and a system people rely on daily is where most AI budgets go to die.",
+      "MIT's enterprise research found AI tools built with external partners succeed roughly twice as often as internal builds — and that the failures were integration failures, not model failures. The gap between a board-ready demo and a system people rely on daily is where most AI budgets go to die. Which platform, which partner, and what scope are the decisions that determine which side of that gap you land on.",
     body:
-      'End-to-end implementation: we evaluate your requirements, pick the right approach — vendor platform, selective custom build, or hybrid — architect it, integrate it with the systems you already run, and deploy to production. Idempotent actions, guardrails, observability, and an eval suite, because "mostly works" is a failure state. The recommendation isn\'t tied to maximizing a build: vendor, custom, or hybrid is chosen on your requirements and total cost — and we\'ll happily recommend the smaller scope when it\'s the right one.',
+      "We turn \"we should do something with AI\" into a plan your team or vendor can execute: requirements defined against your actual systems, vendor platform versus custom build versus hybrid recommended on fit and three-year cost at real headcount, a reference architecture for your environment, and acceptance criteria precise enough to hold whoever builds it accountable — guardrails, observability, and an eval suite written into the definition of done. We don't take the build, so the recommendation has nothing to sell but the answer — and we'll happily recommend the smaller scope when it's the right one.",
     deliverables: [
-      'Implementation planning', 'Vendor solution integration', 'Selective custom development',
-      'LLM & RAG system architecture', 'Agentic workflow design', 'Production deployment & operations',
-      'System & data pipeline integration', 'Complete knowledge transfer',
+      'Implementation roadmap & scope definition', 'Requirements & readiness assessment',
+      'Vendor evaluation & selection', 'Build vs buy recommendation',
+      'Reference architecture & system design', 'Pilot & evaluation design',
+      'Acceptance criteria & vendor oversight', 'Complete knowledge transfer',
     ],
-    cta: 'Scope the build →',
+    cta: 'Plan the implementation →',
     accent: 'var(--terracotta)',
     folioInk: 'var(--terracotta-ink)',
   },
   {
-    id: 'strategy',
+    id: 'governance',
     num: '02',
-    title: 'AI Strategy, Audits & Governance',
+    title: 'AI Audits & Governance',
     headline: 'A decision, not a deck.',
     insight:
       "McKinsey tested 25 organizational attributes against AI's bottom-line impact. The strongest predictor wasn't budget or model choice — it was whether the company redesigned its workflows. Yet one in six organizations still has no C-level owner for AI. Most strategy engagements never touch either fact.",
@@ -46,7 +47,7 @@ const SERVICES = [
     insight:
       'Companies raised AI tool spending 23% in late 2025 while cutting AI training budgets 18% — yet organizations with mature AI literacy programs are nearly twice as likely to see significant ROI. Software nobody knows how to use is shelfware with a subscription fee. Most training fails because it transfers information instead of building behavior.',
     body:
-      "Programs designed around your team's real work, real tools, and real feedback loops — built by engineers who ship with these tools daily and have spent years designing developer education that stuck. Your people leave using AI in their actual workflows, with the judgment to know when not to. The capability belongs to the institution, not to the individual who happened to attend.",
+      "Programs designed around your team's real work, real tools, and real feedback loops — built by engineers who use these tools daily and have spent years designing developer education that stuck. Your people leave using AI in their actual workflows, with the judgment to know when not to. The capability belongs to the institution, not to the individual who happened to attend.",
     deliverables: [
       'Custom curriculum design', 'Live workshops (half-day to multi-day)', 'Self-paced learning systems',
       'LLM & AI tool training', 'Workflow design & optimization', 'Assessment & competency frameworks',
@@ -66,7 +67,7 @@ export default function Services() {
           kicker="Three practices"
           title="What we do."
           em="What you get."
-          lead="Implementation keeps the strategy honest. Strategy makes the training relevant. Training makes the build survivable after we leave. One practice — because the handoff between three separate vendors is where AI initiatives actually die."
+          lead="The implementation plan keeps the strategy honest. The strategy makes the training relevant. The training makes the plan survivable after we leave. One practice — because the handoff between three separate vendors is where AI initiatives actually die."
         />
 
         {SERVICES.map((svc, i) => (

@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Reveal } from './shared'
 
 const INTERESTS = [
-  'AI Implementation',
-  'AI Strategy, Audits & Governance',
+  'AI Implementation Strategy',
+  'AI Audits & Governance',
   'AI Training & Capability',
   "Not sure yet — that's what the diagnostic is for",
 ]
@@ -88,6 +88,7 @@ export default function Contact() {
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit} noValidate>
+                <p className="form-kicker">The 45-minute diagnostic starts here.</p>
                 <div className="form-row">
                   <label className="form-label">
                     Name

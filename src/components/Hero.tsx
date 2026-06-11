@@ -10,8 +10,10 @@ const PROBLEMS = [
   'Per-seat AI pricing that punishes successful adoption.',
 ]
 
-/* Cycling ticker — copy device kept from v1. Static first line under
-   prefers-reduced-motion. */
+/* Cycling ticker — runs through all six lines once, then stops on the
+   last (WCAG 2.2.2: auto-updating content must not run indefinitely
+   without a pause control). Static first line under reduced motion.
+   Not a live region: the lines are rhetorical, not status updates. */
 function ProblemTicker() {
   const [idx, setIdx] = useState(0)
   const [paused, setPaused] = useState(false)
@@ -19,12 +21,17 @@ function ProblemTicker() {
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
     if (mq.matches) { setPaused(true); return }
-    const cycle = setInterval(() => setIdx(i => (i + 1) % PROBLEMS.length), 5200)
+    const cycle = setInterval(() => {
+      setIdx(i => {
+        if (i + 1 >= PROBLEMS.length - 1) clearInterval(cycle)
+        return Math.min(i + 1, PROBLEMS.length - 1)
+      })
+    }, 5200)
     return () => clearInterval(cycle)
   }, [])
 
   return (
-    <div className="ticker" aria-live="polite">
+    <div className="ticker">
       <span className="ticker-label">Sound familiar?</span>
       {paused ? (
         <span className="ticker-line">{PROBLEMS[0]}</span>
@@ -38,16 +45,15 @@ function ProblemTicker() {
 }
 
 const PILLARS = [
-  { name: 'AI Implementation', sub: 'Production code. Full handover.', accent: 'var(--terracotta-ink)' },
-  { name: 'Strategy, Audits & Governance', sub: 'A decision, not a deck.', accent: 'var(--gold)' },
+  { name: 'AI Implementation Strategy', sub: 'Vendor, scope, architecture — decided.', accent: 'var(--terracotta-ink)' },
+  { name: 'Audits & Governance', sub: 'A decision, not a deck.', accent: 'var(--gold)' },
   { name: 'Training & Capability', sub: 'Still in use six months later.', accent: 'var(--slate)' },
 ]
 
 const CAPABILITIES = [
-  'Strategic Implementation', 'LLM Integration', 'RAG Systems', 'Agentic Pipelines',
-  'Production Deployment', 'Strategic Assessment', 'Vendor Evaluation', 'Build vs Buy Analysis',
-  'AI Governance & Policy', 'EU AI Act Compliance', 'TCO Modeling', 'Capability Building',
-  'Knowledge Transfer',
+  'Implementation Strategy', 'Vendor Evaluation', 'Build vs Buy Analysis', 'Reference Architecture',
+  'Pilot & Eval Design', 'TCO Modeling', 'Strategic Assessment', 'AI Governance & Policy',
+  'EU AI Act Compliance', 'Vendor Oversight', 'Capability Building', 'Knowledge Transfer',
 ]
 
 export default function Hero() {
@@ -64,8 +70,9 @@ export default function Hero() {
               <em> and the build. We were built for that gap.</em>
             </h1>
             <p className="hero-sub">
-              Implementation, strategy, governance, and training — from a team with 10+ years
-              across engineering, technical training, and editorial. We shipped before we consulted.
+              Implementation strategy, audits, governance, and training — from a team with 10+
+              years across engineering, technical training, and editorial. We shipped before we
+              consulted.
             </p>
             <div className="hero-status">
               <span className="status-dot" aria-hidden="true" />
@@ -75,7 +82,7 @@ export default function Hero() {
               <a href="#section-contact" className="btn btn--primary" onClick={scrollToId('section-contact')}>
                 Book a 45-minute diagnostic →
               </a>
-              <a href="#section-transform" className="link-quiet" onClick={scrollToId('section-transform')}>
+              <a href="#section-process" className="link-quiet" onClick={scrollToId('section-process')}>
                 See how we work ›
               </a>
             </div>
@@ -86,9 +93,11 @@ export default function Hero() {
           <p className="hero-tagline">
             MIT&rsquo;s enterprise research found AI tools built with{' '}
             <strong>external partners succeed roughly twice as often</strong> as internal builds.
-            We&rsquo;re the external partner that writes the production code — for mid-market SaaS
-            companies, universities, and PE-backed portfolios. Vendor platform, custom build, or
-            hybrid: chosen on fit and total cost of ownership, not on what&rsquo;s easiest to sell.
+            Which platform, which partner, what scope, at what three-year cost — those decisions
+            determine the outcome, and they&rsquo;re our whole job. Independent implementation
+            strategy for mid-market SaaS companies, universities, and PE-backed portfolios:
+            vendor platform, custom build, or hybrid, recommended on fit and total cost of
+            ownership — not on what&rsquo;s easiest to sell.
           </p>
           <ProblemTicker />
         </Reveal>

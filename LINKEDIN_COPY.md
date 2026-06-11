@@ -12,37 +12,37 @@
 
 **Primary:**
 
-> Engineers who consult. AI implementation, strategy, and training that ends in production — not in another deck.
+> Engineers who consult. AI implementation strategy, audits, and training that ends in a decision — not a deck.
 
-*(109 characters)*
+*(110 characters)*
 
 **Alternates, if you want to test:**
 
-> AI consulting for the gap where pilots die: between the strategy and the build.
+> Independent AI advisory for the gap where pilots die: between the strategy and the build.
 
-*(79 characters)*
+*(89 characters)*
 
-> AI implementation, strategy & training for mid-market SaaS, universities, and PE-backed portfolios.
+> AI implementation strategy, audits & training for mid-market SaaS, universities, and PE-backed portfolios.
 
-*(99 characters)*
+*(106 characters)*
 
 ## 3. About / Overview (max 2,000 characters)
 
 > Most AI pilots die between the strategy and the build. The deck gets approved, the demo impresses the board, and then nothing reaches production. That gap is our entire business.
 >
-> Code & Clarity is an AI consultancy run by engineers — 10+ years across engineering, technical training, and editorial. We shipped before we consulted. Three practices, one room:
+> Code & Clarity is an independent AI advisory run by engineers — 10+ years across engineering, technical training, and editorial. We shipped before we consulted, and we don't take the build: the recommendation has nothing to sell but the answer. Three practices, one room:
 >
-> AI Implementation. Vendor platform, selective custom build, or hybrid — chosen on your requirements and three-year cost of ownership, not on what's easiest to sell. Production-grade from day one: guardrails, observability, an eval suite, and a handover your team can run without us.
+> AI Implementation Strategy. Which platform, which partner, what scope, at what three-year cost. Vendor, custom, or hybrid recommended on fit and TCO at your real headcount — with a reference architecture and acceptance criteria precise enough to hold whoever builds it accountable.
 >
-> AI Strategy, Audits & Governance. We read your codebase, not just your org chart, and the engagement ends in a decision — scoped, priced, executable. Governance written for systems that act, mapped to the EU AI Act before the regulator asks.
+> AI Audits & Governance. We read your codebase, not just your org chart, and the engagement ends in a decision — scoped, priced, executable. Governance written for systems that act, mapped to the EU AI Act before the regulator asks.
 >
-> AI Training & Capability. Designed by people who ship with these tools daily. The test isn't the workshop survey; it's whether your team still uses the workflows six months later.
+> AI Training & Capability. Designed by engineers who use these tools daily. The test isn't the workshop survey; it's whether your team still uses the workflows six months later.
 >
 > Who hires us: mid-market SaaS companies, universities, and PE-backed portfolios with a real AI decision in front of them.
 >
 > Who shouldn't: if your board needs a Big Four logo for political cover, buy the logo. If you need a $5K chatbot configured, a freelancer is the right answer — and we'll say so on the call.
 >
-> Why one practice: MIT's enterprise research found AI tools built with external partners succeed roughly twice as often as internal builds — and the failures were integration failures, not model failures. Handoffs between a strategy firm, a training vendor, and an implementation shop are where projects die. We removed them.
+> Why it works: MIT's enterprise research found AI tools built with external partners succeed roughly twice as often as internal builds. Which partner, platform, and scope determine the outcome. Those decisions are our whole job.
 >
 > Every engagement starts with a 45-minute diagnostic. You bring the problem; we tell you honestly whether we can help — including when the answer is "you don't need us yet."
 >
@@ -62,9 +62,9 @@
 
 ## 5. Specialties (max 20 — these are search keywords, not prose)
 
-AI Implementation · LLM Integration · RAG Systems · Agentic Workflows · Production Deployment · AI Strategy · AI Readiness Audits · Vendor Evaluation · Build vs Buy Analysis · TCO Modeling · AI Governance · EU AI Act Compliance · AI Risk Assessment · AI Training · Capability Building · Curriculum Design · Knowledge Transfer
+AI Implementation Strategy · Vendor Evaluation · Build vs Buy Analysis · TCO Modeling · Reference Architecture · Pilot Design · AI Readiness Audits · Vendor Oversight · AI Governance · EU AI Act Compliance · AI Risk Assessment · AI Strategy · AI Training · Capability Building · Curriculum Design · Knowledge Transfer
 
-*(17 of 20)*
+*(16 of 20)*
 
 ## 6. Cover image (1128 × 191)
 
@@ -72,7 +72,7 @@ No photo, no stock, no gradient mesh. Warm ivory field (`#faf9f5`), warm near-bl
 
 Text on the image, set in DM Mono caps, small:
 
-> AI IMPLEMENTATION · STRATEGY, AUDITS & GOVERNANCE · TRAINING & CAPABILITY
+> AI IMPLEMENTATION STRATEGY · AUDITS & GOVERNANCE · TRAINING & CAPABILITY
 
 Optionally, right-aligned in Cormorant italic: *A decision, not a deck.*
 
@@ -82,15 +82,15 @@ Optionally, right-aligned in Cormorant italic: *A decision, not a deck.*
 >
 > We work in the gap where AI projects actually fail. Not the strategy phase — plenty of firms will sell you eighty slides. Not the demo — demos are easy. The gap between the approved deck and a system your team relies on every day. MIT's enterprise research puts numbers on this: AI tools built with external partners succeed roughly twice as often as internal builds, and the failures are integration failures, not model failures.
 >
-> So that's the practice. We audit what you actually have, we build what we recommend, and we train your team on the thing we built. Same people, start to finish. No handoffs for the project to die in.
+> So that's the practice. We audit what you actually have, we decide what should be built and by whom — vendor, custom, or hybrid, priced at three-year cost, with acceptance criteria your builder signs against — and we train your team to own it. Same people, start to finish. We don't take the build ourselves, which means the recommendation has nothing to sell but the answer.
 >
 > Two things we'd rather tell you now than on a call:
 >
-> We're engineers first. 10+ years shipping production software, designing developer education, and editing technical writing before anyone called us consultants. The recommendation comes from the people who have to make it work.
+> We're engineers first. 10+ years shipping production software, designing developer education, and editing technical writing before anyone called us consultants. We only recommend what we could build ourselves.
 >
 > And we're not for everyone. If you need a Big Four logo on the deck, buy the logo. If you need a $5K chatbot configured, hire a freelancer — genuinely, it's the right call.
 >
-> If you have a real AI decision in front of you — a build, an audit, a vendor choice, a team that needs capability — we start with a 45-minute diagnostic. You bring the problem. We'll tell you straight whether we can help, what it would produce, and what it costs. Sometimes the answer is "you don't need us yet." You leave with that answer either way.
+> If you have a real AI decision in front of you — a vendor choice, an implementation plan, an audit, a team that needs capability — we start with a 45-minute diagnostic. You bring the problem. We'll tell you straight whether we can help, what it would produce, and what it costs. Sometimes the answer is "you don't need us yet." You leave with that answer either way.
 >
 > codeclarity.ai
 
@@ -98,7 +98,7 @@ Optionally, right-aligned in Cormorant italic: *A decision, not a deck.*
 
 ## 8. Follow-prompt blurb (for the founder's personal "I started a page" share)
 
-> I finally gave Code & Clarity a company page. The pinned post explains what we do without the consulting fog: we're engineers who build the AI systems we recommend, and we'll tell you when you don't need us. Follow it if "ends in production, not in another deck" sounds like the standard you want.
+> I finally gave Code & Clarity a company page. The pinned post explains what we do without the consulting fog: we're engineers who tell you what to build, who should build it, and what it should cost — and we'll tell you when you don't need us. Follow it if "a decision, not a deck" sounds like the standard you want.
 
 ---
 

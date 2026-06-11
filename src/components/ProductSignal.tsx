@@ -5,22 +5,22 @@ const FEATURES = [
   {
     title: 'Implementation planning',
     body:
-      'The right technical approach for your requirements — vendor platform, selective custom build, or hybrid — evaluated against your infrastructure, security posture, and three-year cost at real headcount. The answer is shaped by your requirements, not by what generates the largest build.',
+      'The right technical approach for your requirements — vendor platform, custom build, or hybrid — evaluated against your infrastructure, security posture, and three-year cost at real headcount. The answer is shaped by your requirements, not by what generates the largest engagement.',
   },
   {
-    title: 'Production-grade by default',
+    title: 'Specified for production',
     body:
-      'Idempotent actions, guardrails, observability, and an eval suite from day one. Built for real traffic and real edge cases, because "worked in the demo" is not an acceptance criterion.',
+      'Guardrails, observability, idempotent actions, and an eval suite — written into the acceptance criteria from day one, because "mostly works" is a failure state and "worked in the demo" is not a definition of done.',
   },
   {
     title: 'Integrated, not bolted on',
     body:
-      "Your auth, your data boundaries, your existing systems. MIT's research found failed AI pilots were integration failures, not model failures — so integration is where we spend the effort.",
+      "Your auth, your data boundaries, your existing systems. MIT's research found failed AI pilots were integration failures, not model failures — so integration is where the plan spends its effort.",
   },
   {
-    title: 'Scoped to ship',
+    title: 'Scoped to be executed',
     body:
-      'Tight scopes, visible milestones, working software early. Timelines agreed honestly up front instead of promised optimistically and renegotiated later — then complete handover: documentation, runbooks, and a team that can run it without us.',
+      'Tight scope, visible milestones, acceptance criteria your vendor signs against. Timelines set honestly up front instead of promised optimistically and renegotiated later — then a handover plan: documentation, decision records, and a team that can own what gets built.',
   },
 ]
 
@@ -52,13 +52,13 @@ const ARCH = [
 
 export default function ProductSignal() {
   return (
-    <section id="section-product" className="section" aria-label="AI implementation">
+    <section id="section-product" className="section section--deep" aria-label="AI implementation strategy">
       <div className="section-content">
         <SectionHeader
-          kicker="AI Implementation"
+          kicker="AI Implementation Strategy"
           title="The demo is easy."
           em="Production is the job."
-          lead="Anyone can make a model look good for eight minutes in a boardroom. We build for the Tuesday afternoon eighteen months from now when the person who configured it has left."
+          lead="Anyone can make a model look good for eight minutes in a boardroom. We plan for the Tuesday afternoon eighteen months from now when the person who configured it has left — and we write the standard your implementation is held to."
         />
 
         <Reveal className="feature-grid">
@@ -71,7 +71,10 @@ export default function ProductSignal() {
           ))}
         </Reveal>
 
-        <Reveal className="ledger">
+        <Reveal
+          className="ledger"
+          style={{ '--label-demo': '"The demo"', '--label-product': '"The product"' } as React.CSSProperties}
+        >
           <div className="ledger-head">
             <span className="ledger-col-label ledger-col-label--demo">The demo</span>
             <span className="ledger-col-label ledger-col-label--product">The product</span>
@@ -92,7 +95,7 @@ export default function ProductSignal() {
 
         <Reveal className="arch-stack">
           <div className="arch-label">
-            <span className="kicker">Typical custom implementation architecture</span>
+            <span className="kicker">Typical reference architecture</span>
           </div>
           {ARCH.map((l, i) => (
             <div className="arch-layer" key={l.name} style={{ '--layer-accent': l.accent } as React.CSSProperties}>
@@ -104,7 +107,7 @@ export default function ProductSignal() {
 
         <Reveal style={{ textAlign: 'center', marginTop: '3rem' }}>
           <a href="#section-contact" className="btn btn--primary" onClick={scrollToId('section-contact')}>
-            Scope the build →
+            Plan the implementation →
           </a>
         </Reveal>
       </div>

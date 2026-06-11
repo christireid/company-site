@@ -17,7 +17,10 @@ export default function Footer() {
             Code <span className="amp">&amp;</span> Clarity — engineers who consult. New York.
           </p>
           <span className="footer-subline">
-            AI implementation, strategy, audits, governance, and training.
+            AI implementation strategy, audits, governance, and training.
+          </span>
+          <span className="footer-subline">
+            <a href="mailto:hello@codeclarity.ai">hello@codeclarity.ai</a>
           </span>
         </div>
         <nav className="footer-links" aria-label="Footer navigation">

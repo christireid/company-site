@@ -1,5 +1,32 @@
 # FINAL_REPORT — Code & Clarity redesign
 
+## 0. Post-launch revision: advisory repositioning + UX remediation (June 2026)
+
+By owner decision, all custom-development and engineering *offerings* were removed.
+The practice is now **implementation strategy and recommendations**: planning, vendor
+evaluation, build-vs-buy, reference architecture, acceptance criteria, vendor oversight,
+audits, governance, and training. Engineering history remains as credibility substrate
+("we shipped before we consulted", "we only recommend what we could build ourselves")
+but nothing on the site or LinkedIn sells a build. New canonical taxonomy:
+**AI Implementation Strategy · AI Audits & Governance · AI Training & Capability.**
+
+In the same pass, every finding from the UX expert review was implemented:
+ticker now cycles once and stops (WCAG 2.2.2) with `aria-live` removed; diagram nodes
+got 30px invisible hit circles, `role="group"` (was `role="img"`, which hid the buttons
+from AT), hover affordance, a "Select a practice" hint, and scroll-into-view feedback;
+mobile ledger rows regained their column frame via per-cell micro-labels; the contact
+form opens with "The 45-minute diagnostic starts here" to close the CTA seam;
+`color-scheme: light` set; nav scrollspy added; surface rhythm fixed (proof strip on
+paper, ProductSignal deep, Results paper, FAQ deep); redundant manifesto index lines
+cut; stat baselines aligned; "See how we work" retargeted to Process; FAQ panels animate
+where `interpolate-size` is supported; OG card (`/og.png`) and 32px PNG favicon added;
+footer gained a direct email. Lighthouse after the pass: 97 / 100 / 100 / 100, LCP 2.4s, CLS 0.
+
+**New [VERIFY] items from this revision:**
+- Results metric "0 — Vendor commissions behind our recommendations": confirm no referral/commission arrangements exist, or this comes out.
+- Fintech case study reframed to the advisory role ("implementation strategy for…; the team had it running in production") — confirm this matches the actual engagement.
+- Footer/accessibility email `hello@codeclarity.ai` — confirm the inbox exists.
+
 *"The Quiet Publication" applied to the live single-page site, with Site Copy v2 as canonical text. June 2026.*
 
 ## 1. What shipped, by phase

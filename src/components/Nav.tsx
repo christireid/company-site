@@ -11,11 +11,31 @@ const LINKS = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeId, setActiveId] = useState<string | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Scrollspy: mark the nav link of the section currently in the
+  // reading band, so a 13-section page always shows where you are.
+  useEffect(() => {
+    const sections = LINKS
+      .map(l => document.querySelector(l.href))
+      .filter((el): el is Element => el !== null)
+    if (!sections.length) return
+    const obs = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActiveId('#' + entry.target.id)
+        }
+      },
+      { rootMargin: '-35% 0px -55% 0px' }
+    )
+    sections.forEach(s => obs.observe(s))
+    return () => obs.disconnect()
   }, [])
 
   const scrollTo = (href: string) => (e: React.MouseEvent) => {
@@ -36,7 +56,13 @@ export default function Nav() {
 
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
           {LINKS.map(l => (
-            <a key={l.label} href={l.href} className="nav-link" onClick={scrollTo(l.href)}>
+            <a
+              key={l.label}
+              href={l.href}
+              className={`nav-link ${activeId === l.href ? 'active' : ''}`}
+              aria-current={activeId === l.href ? 'true' : undefined}
+              onClick={scrollTo(l.href)}
+            >
               {l.label}
             </a>
           ))}

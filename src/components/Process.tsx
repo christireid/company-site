@@ -15,12 +15,12 @@ const STEPS = [
   {
     title: 'Progress you can see weekly',
     body:
-      'Working output every week — running code, written decisions, draft frameworks — not a status deck. Redirect any week you like.',
+      'Working output every week — written decisions, draft frameworks, evaluation results — not a status deck. Redirect any week you like.',
   },
   {
     title: 'Handover built in from day one',
     body:
-      "The engagement closes when your team can operate and extend the work without us. Code written to be read. Docs written for the people who'll maintain them. If you still need us afterward, we didn't finish.",
+      "The engagement closes when your team can act on the work without us. Recommendations written to be executed. Docs written for the people who'll own them. If you still need us afterward, we didn't finish.",
   },
 ]
 
@@ -44,8 +44,9 @@ export default function Process() {
 
         <Reveal className="process-cta">
           <p className="process-cta-text">
-            Every engagement starts with a 45-minute diagnostic — whether you need a build,
-            an audit, a training program, or you&rsquo;re still working out which.
+            Every engagement starts with a 45-minute diagnostic — whether you need an
+            implementation plan, an audit, a training program, or you&rsquo;re still working
+            out which.
           </p>
           <a href="#section-contact" className="btn btn--primary" onClick={scrollToId('section-contact')}>
             Book the diagnostic →
