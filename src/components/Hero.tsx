@@ -50,10 +50,14 @@ const PILLARS = [
   { name: 'Training & Capability', sub: 'Still in use six months later.', accent: 'var(--slate)' },
 ]
 
-const CAPABILITIES = [
-  'Implementation Strategy', 'Vendor Evaluation', 'Build vs Buy Analysis', 'Reference Architecture',
-  'Pilot & Eval Design', 'TCO Modeling', 'Strategic Assessment', 'AI Governance & Policy',
-  'EU AI Act Compliance', 'Vendor Oversight', 'Capability Building', 'Knowledge Transfer',
+/* The strip trims to the core six on phones (the rest is .index-more) */
+const CAPABILITIES_CORE = [
+  'Implementation Strategy', 'Vendor Evaluation', 'Build vs Buy Analysis',
+  'TCO Modeling', 'AI Governance & Policy', 'Training & Capability',
+]
+const CAPABILITIES_MORE = [
+  'Reference Architecture', 'Pilot & Eval Design', 'Strategic Assessment',
+  'EU AI Act Compliance', 'Vendor Oversight', 'Knowledge Transfer',
 ]
 
 export default function Hero() {
@@ -95,9 +99,7 @@ export default function Hero() {
             <strong>external partners succeed roughly twice as often</strong> as internal builds.
             Which platform, which partner, what scope, at what three-year cost — those decisions
             determine the outcome, and they&rsquo;re our whole job. Independent implementation
-            strategy for mid-market SaaS companies, universities, and PE-backed portfolios:
-            vendor platform, custom build, or hybrid, recommended on fit and total cost of
-            ownership — not on what&rsquo;s easiest to sell.
+            strategy for mid-market SaaS companies, universities, and PE-backed portfolios.
           </p>
           <ProblemTicker />
         </Reveal>
@@ -115,12 +117,20 @@ export default function Hero() {
 
       <div className="hero-index">
         <p className="index-strip" aria-label="Capabilities">
-          {CAPABILITIES.map((c, i) => (
+          {CAPABILITIES_CORE.map((c, i) => (
             <React.Fragment key={c}>
               {i > 0 && <span className="dot" aria-hidden="true">·</span>}
               <span>{c}</span>
             </React.Fragment>
           ))}
+          <span className="index-more">
+            {CAPABILITIES_MORE.map(c => (
+              <React.Fragment key={c}>
+                <span className="dot" aria-hidden="true">·</span>
+                <span>{c}</span>
+              </React.Fragment>
+            ))}
+          </span>
         </p>
       </div>
     </section>

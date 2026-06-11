@@ -309,6 +309,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   max-width: none;
 }
 .index-strip .dot { color: var(--terracotta); padding: 0 0.55em; }
+@media (max-width: 680px) {
+  .index-strip .index-more { display: none; }
+}
 
 /* ── Nav ─────────────────────────────────────────────────────────── */
 .site-nav {
@@ -571,26 +574,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   border-left: 2px solid var(--terracotta);
 }
 .manifesto-quote em { font-style: italic; color: var(--terracotta-ink); }
-
-.practice-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 2.4rem;
-}
-.practice-chip {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.05em;
-  color: var(--ink-body);
-  border: 1px solid var(--rule-strong);
-  border-left: 3px solid var(--chip-accent, var(--terracotta));
-  border-radius: 2px;
-  padding: 0.45rem 0.9rem;
-  background: var(--paper);
-}
-
-.manifesto-index { margin-top: 2.6rem; }
 
 /* ── Services — three chapters ───────────────────────────────────── */
 .chapter {

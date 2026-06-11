@@ -1,12 +1,6 @@
 import React from 'react'
 import { Reveal } from './shared'
 
-const CHIPS = [
-  { label: 'AI Implementation Strategy', accent: 'var(--terracotta)' },
-  { label: 'Audits & Governance', accent: 'var(--gold)' },
-  { label: 'Training & Capability', accent: 'var(--slate)' },
-]
-
 export default function ManifestoBreak() {
   return (
     <section id="section-manifesto" className="section section--deep" aria-label="Why we exist">
@@ -23,16 +17,6 @@ export default function ManifestoBreak() {
             ourselves, and we&rsquo;d rather lose an engagement by being honest about fit than
             win one with a deck.
           </blockquote>
-        </Reveal>
-
-        <Reveal delay={0.12}>
-          <div className="practice-chips">
-            {CHIPS.map(c => (
-              <span className="practice-chip" key={c.label} style={{ '--chip-accent': c.accent } as React.CSSProperties}>
-                {c.label}
-              </span>
-            ))}
-          </div>
         </Reveal>
       </div>
     </section>

@@ -24,25 +24,6 @@ const FEATURES = [
   },
 ]
 
-const LEDGER = [
-  {
-    demo: 'Impresses a board with hardcoded data',
-    product: 'Runs on your real infrastructure with your real data',
-  },
-  {
-    demo: 'Works when you script the questions',
-    product: 'Evaluated against your requirements, with an eval suite to prove it',
-  },
-  {
-    demo: 'Abandoned three weeks after launch',
-    product: 'Designed around the workflow it lives inside',
-  },
-  {
-    demo: 'Configured by consultants who leave',
-    product: 'Handed over with docs, runbooks, and a trained team',
-  },
-]
-
 /* "Where we sit" — the one diagram that explains the advisory model:
    we're hired by you, independent of the builder, and we hold both
    directions of the work. Edges draw on scroll via the same gated
@@ -162,28 +143,6 @@ export default function ProductSignal() {
 
         <Reveal style={{ marginTop: 'clamp(2.8rem, 5vw, 4rem)' }}>
           <WhereWeSit />
-        </Reveal>
-
-        <Reveal
-          className="ledger"
-          style={{ '--label-demo': '"The demo"', '--label-product': '"The product"' } as React.CSSProperties}
-        >
-          <div className="ledger-head">
-            <span className="ledger-col-label ledger-col-label--demo">The demo</span>
-            <span className="ledger-col-label ledger-col-label--product">The product</span>
-          </div>
-          {LEDGER.map(row => (
-            <div className="ledger-row" key={row.demo}>
-              <div className="ledger-cell ledger-cell--demo">
-                <span className="mark" aria-hidden="true">✕</span>
-                <span>{row.demo}</span>
-              </div>
-              <div className="ledger-cell ledger-cell--product">
-                <span className="mark" aria-hidden="true">✓</span>
-                <span>{row.product}</span>
-              </div>
-            </div>
-          ))}
         </Reveal>
 
         <Reveal className="arch-stack">
