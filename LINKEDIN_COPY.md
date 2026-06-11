@@ -57,7 +57,7 @@
 | Company size | 2–10 employees |
 | Headquarters | New York, NY |
 | Type | Privately held |
-| Founded | [VERIFY — year] |
+| Founded | 2025 |
 | Custom button | **Visit website** → codeclarity.ai *(switch to the diagnostic booking URL once one exists; "Book an appointment" is the better button then)* |
 
 ## 5. Specialties (max 20 — these are search keywords, not prose)
@@ -112,7 +112,6 @@ Optionally, right-aligned in Cormorant italic: *A decision, not a deck.*
 
 ## [VERIFY] before publishing
 
-- Founded year (field 4).
 - "50+ teams upskilled" is deliberately **omitted** here until sourced — the About stands without it.
 - Booking URL for the custom button when the diagnostic scheduler exists.
 - Cover image to be produced from the site's token system (I can generate the SVG/PNG on request).
