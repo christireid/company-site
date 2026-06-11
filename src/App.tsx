@@ -5,7 +5,6 @@ import ProofStrip from './components/ProofStrip'
 import ManifestoBreak from './components/ManifestoBreak'
 import Services from './components/Services'
 import ProductSignal from './components/ProductSignal'
-import Results from './components/Results'
 import TransformZones from './components/TransformZones'
 
 // Below-the-fold components stay lazy
@@ -26,10 +25,7 @@ export default function App() {
         <ProofStrip />
         <ManifestoBreak />
         <Services />
-        <hr className="divider" />
         <ProductSignal />
-        <Results />
-        <hr className="divider" />
         <TransformZones />
 
         <Suspense fallback={<div style={{ minHeight: '50vh' }} />}>

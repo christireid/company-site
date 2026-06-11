@@ -801,55 +801,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   text-align: right;
 }
 
-/* ── Results ─────────────────────────────────────────────────────── */
-.results-metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.6rem;
-  border-top: 1px solid var(--rule);
-  margin-bottom: clamp(2.6rem, 5vw, 4rem);
-  align-items: baseline;
-}
-.results-metrics .mstat-num { font-size: clamp(1.9rem, 3vw, 2.7rem); }
-
-.case-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.4rem;
-}
-.case-card {
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 2px;
-  padding: 1.7rem 1.8rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-}
-.case-sector {
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--terracotta-ink);
-}
-.case-outcome {
-  margin-top: 0.9rem;
-  font-size: 0.96rem;
-  line-height: 1.7;
-  color: var(--ink-body);
-  flex: 1;
-}
-.case-meta {
-  margin-top: 1.3rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--rule);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.07em;
-  color: var(--ink-muted);
-}
-
 /* ── Loop diagram — the signature moment ─────────────────────────── */
 .loop-row {
   display: grid;
@@ -1305,7 +1256,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .loop-row { grid-template-columns: 1fr; }
   .loop-cards { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
-  .results-metrics { grid-template-columns: repeat(2, 1fr); }
   .process-step { grid-template-columns: 1fr; gap: 0.8rem; }
 }
 
@@ -1355,11 +1305,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   }
   .ledger-cell--demo::before { content: var(--label-demo, none); color: var(--ink-muted); }
   .ledger-cell--product::before { content: var(--label-product, none); color: var(--terracotta-ink); }
-  .case-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .interest-grid { grid-template-columns: 1fr; }
   .deliverable-list { grid-template-columns: 1fr; }
   .manifesto-stats { grid-template-columns: 1fr; gap: 0; }
   .mstat { border-bottom: 1px solid var(--rule); padding-bottom: 1.2rem; margin-bottom: 0.2rem; }
-  .results-metrics { grid-template-columns: 1fr 1fr; }
 }

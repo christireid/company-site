@@ -22,10 +22,14 @@ cut; stat baselines aligned; "See how we work" retargeted to Process; FAQ panels
 where `interpolate-size` is supported; OG card (`/og.png`) and 32px PNG favicon added;
 footer gained a direct email. Lighthouse after the pass: 97 / 100 / 100 / 100, LCP 2.4s, CLS 0.
 
-**New [VERIFY] items from this revision:**
-- Results metric "0 — Vendor commissions behind our recommendations": confirm no referral/commission arrangements exist, or this comes out.
-- Fintech case study reframed to the advisory role ("implementation strategy for…; the team had it running in production") — confirm this matches the actual engagement.
-- Footer/accessibility email `hello@codeclarity.ai` — confirm the inbox exists.
+**Owner decisions on this revision's [VERIFY] items:**
+- Vendor-commission metric: **rejected — removed.**
+- Case studies: **all removed by owner decision.** With no cases, the Results section had no
+  unique content (its remaining metrics duplicate the proof strip/manifesto/contact), so the
+  section was unmounted entirely and its nav/footer links removed. Side effect: the page now
+  alternates surfaces perfectly (deep/paper) end to end. Proof on the site is now contractual
+  facts + cited research only; reintroduce a Results section only when publishable engagements exist.
+- Footer/accessibility email `hello@codeclarity.ai` — still [VERIFY]: confirm the inbox exists.
 
 *"The Quiet Publication" applied to the live single-page site, with Site Copy v2 as canonical text. June 2026.*
 

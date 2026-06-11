@@ -3,7 +3,6 @@ import React from 'react'
 const LINKS = [
   { label: 'Implementation', href: '#section-product' },
   { label: 'Services', href: '#section-services' },
-  { label: 'Results', href: '#section-results' },
   { label: 'Process', href: '#section-process' },
   { label: 'Contact', href: '#section-contact' },
 ]
