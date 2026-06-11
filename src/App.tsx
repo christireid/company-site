@@ -33,7 +33,6 @@ export default function App() {
         <Suspense fallback={<div style={{ minHeight: '50vh' }} />}>
           <Process />
         </Suspense>
-        <hr className="divider" />
         <Suspense fallback={<div style={{ minHeight: '50vh' }} />}>
           <FAQ />
         </Suspense>

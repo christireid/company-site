@@ -10,7 +10,7 @@ const SWATCHES = [
   ['--ink-muted', '#605c53'],
   ['--terracotta', '#c2552c'],
   ['--terracotta-ink', '#a8451f'],
-  ['--gold', '#9c7218'],
+  ['--gold', '#8a6415'],
   ['--gold-soft', '#e8c87f'],
   ['--slate', '#46666a'],
 ]

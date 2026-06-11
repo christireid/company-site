@@ -22,6 +22,7 @@ export default function Footer() {
           <span className="footer-subline">
             <a href="mailto:hello@codeclarity.ai">hello@codeclarity.ai</a>
           </span>
+          <span className="footer-subline">© {new Date().getFullYear()} Code &amp; Clarity</span>
         </div>
         <nav className="footer-links" aria-label="Footer navigation">
           {LINKS.map(l => (

@@ -85,7 +85,7 @@
   --no: #9a3b2e;
 
   /* The prism, retuned warm → gold. Thin bars, logo, dividers ONLY. */
-  --grad-prism: linear-gradient(90deg, #c2552c 0%, #e8c87f 55%, #9c7218 100%);
+  --grad-prism: linear-gradient(90deg, #c2552c 0%, #e8c87f 55%, #8a6415 100%);
 
   /* Type */
   --font-display: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
