@@ -1,0 +1,32 @@
+import { chromium } from 'playwright-core'
+const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome', args: ['--no-sandbox'] })
+
+// mobile: menu open, ledger, faq open
+const m = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' })
+const mp = await m.newPage()
+await mp.goto('http://localhost:4173/', { waitUntil: 'networkidle' })
+await mp.click('.nav-burger')
+await mp.waitForTimeout(400)
+await mp.screenshot({ path: 'qa-shots/state-mobile-menu.png' })
+await mp.click('.nav-burger')
+await mp.locator('.ledger').first().scrollIntoViewIfNeeded()
+await mp.waitForTimeout(300)
+await mp.screenshot({ path: 'qa-shots/state-mobile-ledger.png' })
+await mp.locator('.faq-item').first().click()
+await mp.waitForTimeout(300)
+await mp.locator('.faq-item').first().scrollIntoViewIfNeeded()
+await mp.screenshot({ path: 'qa-shots/state-mobile-faq-open.png' })
+await m.close()
+
+// desktop: diagram node activated
+const d = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' })
+const dp = await d.newPage()
+await dp.goto('http://localhost:4173/', { waitUntil: 'networkidle' })
+await dp.locator('#section-transform').scrollIntoViewIfNeeded()
+await dp.waitForTimeout(300)
+await dp.locator('.loop-node-btn').first().click()
+await dp.waitForTimeout(400)
+await dp.screenshot({ path: 'qa-shots/state-diagram-active.png' })
+await d.close()
+await browser.close()
+console.log('done')

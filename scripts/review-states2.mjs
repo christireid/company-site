@@ -1,0 +1,18 @@
+import { chromium } from 'playwright-core'
+const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome', args: ['--no-sandbox'] })
+const d = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' })
+const dp = await d.newPage()
+await dp.goto('http://localhost:4173/', { waitUntil: 'networkidle' })
+await dp.locator('#section-transform').scrollIntoViewIfNeeded()
+await dp.waitForTimeout(300)
+await dp.locator('.loop-node-btn').first().focus()
+await dp.keyboard.press('Enter')
+await dp.waitForTimeout(400)
+await dp.screenshot({ path: 'qa-shots/state-diagram-active.png' })
+// can a mouse click on the circle itself work?
+const ring = await dp.locator('.loop-node-ring').nth(1).boundingBox()
+await dp.mouse.click(ring.x + ring.width/2, ring.y + ring.height/2)
+await dp.waitForTimeout(300)
+const pressed = await dp.locator('.loop-node-btn').nth(1).getAttribute('aria-pressed')
+console.log('direct circle click toggles:', pressed)
+await browser.close()
