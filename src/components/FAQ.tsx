@@ -4,7 +4,11 @@ import { Reveal, SectionHeader } from './shared'
 const FAQS = [
   {
     q: 'Who is this for?',
-    a: 'Mid-market SaaS companies, universities, and PE-backed portfolios with a real AI decision in front of them — not a vague mandate to "explore AI." If you know what you need, we\'ll scope it in the first call. If you don\'t, the diagnostic exists to figure that out.',
+    a: 'Mid-market SaaS companies, universities, and PE-backed portfolios with a real AI decision in front of them — not a vague mandate to "explore AI." For PE operating teams, that includes assessments that run across several portfolio companies at once. If you know what you need, we\'ll scope it in the first call. If you don\'t, the diagnostic exists to figure that out.',
+  },
+  {
+    q: 'Who are you?',
+    a: "A principal-led practice run by Christi Reid: 10+ years across production engineering, developer education, and editorial before consulting on any of it. We shipped before we consulted. You work directly with the principal — the person in your diagnostic is the person who writes your recommendation, and the person accountable for it.",
   },
   {
     q: "Who shouldn't hire you?",

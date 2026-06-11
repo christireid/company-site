@@ -1,9 +1,10 @@
 import React from 'react'
 
 const LINKS = [
-  { label: 'Implementation', href: '#section-product' },
+  { label: 'Approach', href: '#section-product' },
   { label: 'Services', href: '#section-services' },
   { label: 'Process', href: '#section-process' },
+  { label: 'About', href: '#section-about' },
   { label: 'Contact', href: '#section-contact' },
 ]
 

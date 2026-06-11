@@ -30,6 +30,21 @@ footer gained a direct email. Lighthouse after the pass: 97 / 100 / 100 / 100, L
   alternates surfaces perfectly (deep/paper) end to end. Proof on the site is now contractual
   facts + cited research only; reintroduce a Results section only when publishable engagements exist.
 - Footer/accessibility email `hello@codeclarity.ai` — **confirmed by owner, June 2026.**
+**Persona-review implementation (follow-up pass):** new About section ("Advice with a name
+on it") naming Christi Reid as Founder & Principal with a typographic monogram card — bio
+assembled strictly from the site's existing canonical claims; new FAQ "Who are you?"; the
+diagnostic's deliverable stated in the contact intro; privacy line under the form; FERPA
+sector clause in the Audits & Governance chapter; PE portfolio-wide assessment clause in
+FAQ #1; nav "Implementation" renamed "Approach"; Contact moved to the deep surface.
+**New graphic:** the "Where we sit" engagement-model diagram in the Approach section
+(your team ⇄ Code & Clarity ⇄ the build) with the same gated scroll-driven edge draw as
+the practice loop. Spot illustration, Lottie/Rive, and decorative animation were considered
+and declined (see commit + chat rationale: consistency risk, runtime weight, pedagogy rule).
+
+*[VERIFY] from this pass:* refine the principal bio wording/facts and add a photograph if
+desired (the monogram card has a natural slot); confirm the PE portfolio-wide assessment
+is an engagement shape you'll take; confirm "Approach" as the nav label.
+
 - **All metric displays removed by owner decision** (follow-up to the case-study removal):
   the proof strip, the manifesto stats row, and the contact stat chips are gone. Numbers now
   appear only inside prose (the "10+ years" credibility line, the one-business-day response

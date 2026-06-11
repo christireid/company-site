@@ -29,7 +29,7 @@ const SERVICES = [
     insight:
       "McKinsey tested 25 organizational attributes against AI's bottom-line impact. The strongest predictor wasn't budget or model choice — it was whether the company redesigned its workflows. Yet one in six organizations still has no C-level owner for AI. Most strategy engagements never touch either fact.",
     body:
-      "We audit what you actually have — codebase, contracts, workflows, data boundaries — and tell you where AI creates specific value and where it doesn't. Vendor evaluation modeled on three-year TCO at your real headcount, not the demo price — in past assessments, the spread between deployment models has run to multiples for identical use cases. Governance written for systems that act, not just systems that answer, mapped to the EU AI Act before the regulator asks. The roadmap is precise enough to execute without us.",
+      "We audit what you actually have — codebase, contracts, workflows, data boundaries — and tell you where AI creates specific value and where it doesn't. Vendor evaluation modeled on three-year TCO at your real headcount, not the demo price — in past assessments, the spread between deployment models has run to multiples for identical use cases. Governance written for systems that act, not just systems that answer — mapped to the EU AI Act and to the data boundaries your sector lives inside, FERPA included, before the regulator asks. The roadmap is precise enough to execute without us.",
     deliverables: [
       'AI readiness audit', 'Vendor evaluation & TCO modeling', 'Build vs buy analysis',
       'Governance & compliance framework', 'EU AI Act regulatory mapping', 'Risk assessment & guardrails',

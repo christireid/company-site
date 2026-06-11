@@ -40,7 +40,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="section-contact" className="section" aria-label="Contact">
+    <section id="section-contact" className="section section--deep" aria-label="Contact">
       <div className="section-content">
         <div className="contact-grid">
           <Reveal>
@@ -54,6 +54,11 @@ export default function Contact() {
               Tell us what you&rsquo;re trying to solve. We&rsquo;ll respond within one business
               day with a straight read — including &ldquo;you don&rsquo;t need us for this&rdquo;
               when that&rsquo;s the truth.
+            </p>
+            <p className="contact-intro">
+              The diagnostic itself is 45 minutes. You bring the problem; you leave with a
+              straight answer — whether we can help, what the engagement would produce, and
+              what it costs.
             </p>
 
             <div className="contact-chips">
@@ -152,6 +157,7 @@ export default function Contact() {
                 <button type="submit" className="btn btn--primary" disabled={loading} aria-disabled={loading}>
                   {loading ? 'Sending…' : 'Send message →'}
                 </button>
+                <p className="form-privacy">No list, no sequence — your message goes to a person.</p>
               </form>
             )}
           </Reveal>

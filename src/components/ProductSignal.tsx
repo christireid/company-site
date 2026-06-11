@@ -43,6 +43,67 @@ const LEDGER = [
   },
 ]
 
+/* "Where we sit" — the one diagram that explains the advisory model:
+   we're hired by you, independent of the builder, and we hold both
+   directions of the work. Edges draw on scroll via the same gated
+   CSS animation as the practice loop; fully legible static. */
+function WhereWeSit() {
+  const arrow = (x2: number, y: number, dir: 1 | -1) =>
+    `${x2},${y} ${x2 - 7 * dir},${y - 4} ${x2 - 7 * dir},${y + 4}`
+
+  return (
+    <div className="wws">
+      <div className="arch-label">
+        <span className="kicker">Where we sit</span>
+      </div>
+      <svg
+        className="loop-svg wws-svg"
+        viewBox="0 0 600 200"
+        role="img"
+        aria-label="Diagram of the engagement model: Code and Clarity sits between your team and whoever builds — the decision and training flow to your team, acceptance criteria flow to the builder, and evidence and evaluations flow back."
+      >
+        {/* your team */}
+        <rect className="wws-box" x="20" y="74" width="130" height="52" rx="2" />
+        <text className="wws-label" x="85" y="96" textAnchor="middle">Your team</text>
+        <text className="wws-sub" x="85" y="112" textAnchor="middle">OWNS THE OUTCOME</text>
+
+        {/* us */}
+        <rect className="wws-box wws-box--us" x="235" y="74" width="130" height="52" rx="2" />
+        <text className="wws-label" x="300" y="96" textAnchor="middle">Code <tspan className="wws-amp">&amp;</tspan> Clarity</text>
+        <text className="wws-sub" x="300" y="112" textAnchor="middle">INDEPENDENT ADVISOR</text>
+
+        {/* the builder */}
+        <rect className="wws-box" x="450" y="74" width="130" height="52" rx="2" />
+        <text className="wws-label" x="515" y="96" textAnchor="middle">The build</text>
+        <text className="wws-sub" x="515" y="112" textAnchor="middle">VENDOR OR IN-HOUSE</text>
+
+        {/* us → your team: the decision & training */}
+        <path className="loop-edge" pathLength={1} d="M 235 87 L 158 87" />
+        <polygon className="loop-arrow" points={arrow(152, 87, -1)} />
+        <text className="loop-edge-note" x="195" y="64" textAnchor="middle">decision &amp; training</text>
+
+        {/* your team → us: the problem */}
+        <path className="loop-edge" pathLength={1} d="M 150 113 L 227 113" />
+        <polygon className="loop-arrow" points={arrow(233, 113, 1)} />
+        <text className="loop-edge-note" x="192" y="146" textAnchor="middle">the problem</text>
+
+        {/* us → builder: acceptance criteria */}
+        <path className="loop-edge" pathLength={1} d="M 365 87 L 442 87" />
+        <polygon className="loop-arrow" points={arrow(448, 87, 1)} />
+        <text className="loop-edge-note" x="407" y="64" textAnchor="middle">acceptance criteria</text>
+
+        {/* builder → us: evidence & evals */}
+        <path className="loop-edge" pathLength={1} d="M 450 113 L 373 113" />
+        <polygon className="loop-arrow" points={arrow(367, 113, -1)} />
+        <text className="loop-edge-note" x="410" y="146" textAnchor="middle">evidence &amp; evals</text>
+      </svg>
+      <p className="wws-caption">
+        We sit on your side of the table — hired by you, independent of every vendor.
+      </p>
+    </div>
+  )
+}
+
 const ARCH = [
   { name: 'Client Interface', sub: 'Web / Mobile · Integration with existing systems', accent: 'var(--terracotta)' },
   { name: 'API Gateway', sub: 'Auth · Rate-limit · Observability · Monitoring', accent: 'var(--gold)' },
@@ -69,6 +130,10 @@ export default function ProductSignal() {
               <p className="feature-body">{f.body}</p>
             </div>
           ))}
+        </Reveal>
+
+        <Reveal style={{ marginTop: 'clamp(2.8rem, 5vw, 4rem)' }}>
+          <WhereWeSit />
         </Reveal>
 
         <Reveal

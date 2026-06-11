@@ -888,6 +888,100 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 @keyframes loop-draw { to { stroke-dashoffset: 0; } }
 @keyframes loop-fade { from { opacity: 0; } to { opacity: 1; } }
 
+/* ── Where we sit — engagement-model diagram ─────────────────────── */
+.wws { max-width: 640px; margin: 0 auto; }
+.wws-svg { margin-top: 0.4rem; }
+.wws-box {
+  fill: var(--paper);
+  stroke: var(--rule-strong);
+  stroke-width: 1;
+}
+.wws-box--us { stroke: var(--terracotta); stroke-width: 1.6; }
+.wws-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13.5px;
+  fill: var(--ink);
+}
+.wws-amp { fill: var(--terracotta-ink); }
+.wws-sub {
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  letter-spacing: 0.12em;
+  fill: var(--ink-muted);
+}
+.wws-caption {
+  margin: 0.4rem auto 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  max-width: none;
+}
+
+/* ── About — the named principal ─────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+.about-body {
+  margin-top: 1.2rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--ink-body);
+  max-width: 58ch;
+}
+.about-body strong { font-weight: 500; color: var(--ink); }
+.about-card-wrap { display: flex; justify-content: center; }
+.about-card {
+  width: min(300px, 100%);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--paper-deep);
+  padding: 2.4rem 2rem 2rem;
+  text-align: center;
+}
+.about-monogram {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 4.6rem;
+  line-height: 1;
+  color: var(--terracotta);
+}
+.about-rule {
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: var(--grad-prism);
+  margin: 1.1rem auto 1.3rem;
+}
+.about-name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.45rem;
+  color: var(--ink);
+}
+.about-role {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.92rem;
+  color: var(--ink-body);
+}
+.about-meta {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+}
+
 /* ── Contrast — two ways this ends ───────────────────────────────── */
 .contrast-cta-line {
   font-family: var(--font-display);
@@ -1083,6 +1177,12 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 .form-error { color: var(--no); font-size: 0.9rem; }
+.form-privacy {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+}
 
 .contact-success {
   border: 1px solid var(--rule);
@@ -1181,6 +1281,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .hero-grid { grid-template-columns: 1fr; }
   .hero-aside { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 1.8rem; }
   .chapter { grid-template-columns: 1fr; gap: 1.4rem; }
+  .about-grid { grid-template-columns: 1fr; }
   .loop-row { grid-template-columns: 1fr; }
   .loop-cards { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }

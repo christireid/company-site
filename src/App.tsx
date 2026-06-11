@@ -10,6 +10,7 @@ import TransformZones from './components/TransformZones'
 const ContrastBreak = lazy(() => import('./components/ContrastBreak'))
 const Process = lazy(() => import('./components/Process'))
 const FAQ = lazy(() => import('./components/FAQ'))
+const About = lazy(() => import('./components/About'))
 const Contact = lazy(() => import('./components/Contact'))
 const Footer = lazy(() => import('./components/Footer'))
 
@@ -35,6 +36,9 @@ export default function App() {
         <hr className="divider" />
         <Suspense fallback={<div style={{ minHeight: '50vh' }} />}>
           <FAQ />
+        </Suspense>
+        <Suspense fallback={<div style={{ minHeight: '50vh' }} />}>
+          <About />
         </Suspense>
         <hr className="divider divider--prism" />
         <Suspense fallback={<div style={{ minHeight: '50vh' }} />}>

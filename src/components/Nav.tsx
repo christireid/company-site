@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
 const LINKS = [
-  { label: 'Implementation', href: '#section-product' },
+  { label: 'Approach', href: '#section-product' },
   { label: 'Services', href: '#section-services' },
   { label: 'Process', href: '#section-process' },
   { label: 'FAQ', href: '#section-faq' },
+  { label: 'About', href: '#section-about' },
 ]
 
 export default function Nav() {
