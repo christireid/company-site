@@ -29,7 +29,7 @@ footer gained a direct email. Lighthouse after the pass: 97 / 100 / 100 / 100, L
   section was unmounted entirely and its nav/footer links removed. Side effect: the page now
   alternates surfaces perfectly (deep/paper) end to end. Proof on the site is now contractual
   facts + cited research only; reintroduce a Results section only when publishable engagements exist.
-- Footer/accessibility email `hello@codeclarity.ai` — still [VERIFY]: confirm the inbox exists.
+- Footer/accessibility email `hello@codeclarity.ai` — **confirmed by owner, June 2026.**
 - **All metric displays removed by owner decision** (follow-up to the case-study removal):
   the proof strip, the manifesto stats row, and the contact stat chips are gone. Numbers now
   appear only inside prose (the "10+ years" credibility line, the one-business-day response
