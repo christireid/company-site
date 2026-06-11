@@ -46,7 +46,7 @@
 >
 > Every engagement starts with a 45-minute diagnostic. You bring the problem; we tell you honestly whether we can help — including when the answer is "you don't need us yet."
 >
-> Work and IP stay 100% yours. Scope in writing before work begins. First response within one business day.
+> The work and the IP are yours. Scope in writing before work begins. First response within one business day.
 
 ## 4. Page fields
 
@@ -113,5 +113,6 @@ Optionally, right-aligned in Cormorant italic: *A decision, not a deck.*
 ## [VERIFY] before publishing
 
 - "50+ teams upskilled" has been retired sitewide (unsourced) — do not reintroduce it in posts unless a count is documented.
+- All metric displays and case studies were removed from the site (owner decision, June 2026). Posts should follow the same discipline: no stat blocks, no engagement anecdotes beyond what's contractually publishable — receipts are cited research and contractual commitments only.
 - Booking URL for the custom button when the diagnostic scheduler exists.
 - Cover image to be produced from the site's token system (I can generate the SVG/PNG on request).
