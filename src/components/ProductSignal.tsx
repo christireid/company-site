@@ -61,21 +61,25 @@ function WhereWeSit() {
         {/* us → your team: the decision & training */}
         <path className="loop-edge" pathLength={1} d="M 235 87 L 158 87" />
         <polygon className="loop-arrow" points={arrow(152, 87, -1)} />
+        <path className="loop-flow" pathLength={1} d="M 235 87 L 158 87" style={{ '--flow-color': 'var(--terracotta)', animationDelay: '0s' } as React.CSSProperties} />
         <text className="loop-edge-note" x="195" y="64" textAnchor="middle">decision &amp; training</text>
 
         {/* your team → us: the problem */}
         <path className="loop-edge" pathLength={1} d="M 150 113 L 227 113" />
         <polygon className="loop-arrow" points={arrow(233, 113, 1)} />
+        <path className="loop-flow" pathLength={1} d="M 150 113 L 227 113" style={{ '--flow-color': 'var(--gold)', animationDelay: '-0.9s' } as React.CSSProperties} />
         <text className="loop-edge-note" x="192" y="146" textAnchor="middle">the problem</text>
 
         {/* us → builder: acceptance criteria */}
         <path className="loop-edge" pathLength={1} d="M 365 87 L 442 87" />
         <polygon className="loop-arrow" points={arrow(448, 87, 1)} />
+        <path className="loop-flow" pathLength={1} d="M 365 87 L 442 87" style={{ '--flow-color': 'var(--terracotta)', animationDelay: '-1.8s' } as React.CSSProperties} />
         <text className="loop-edge-note" x="407" y="64" textAnchor="middle">acceptance criteria</text>
 
         {/* builder → us: evidence & evals */}
         <path className="loop-edge" pathLength={1} d="M 450 113 L 373 113" />
         <polygon className="loop-arrow" points={arrow(367, 113, -1)} />
+        <path className="loop-flow" pathLength={1} d="M 450 113 L 373 113" style={{ '--flow-color': 'var(--gold)', animationDelay: '-2.7s' } as React.CSSProperties} />
         <text className="loop-edge-note" x="410" y="146" textAnchor="middle">evidence &amp; evals</text>
       </svg>
       {/* Stacked variant for narrow screens — the SVG's labels render
