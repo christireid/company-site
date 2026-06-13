@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:'Cormorant';font-weight:500 600;src:url('../../public/fonts/cormorant-garamond-latin.woff2') format('woff2')}
+@font-face{font-family:'Cormorant';font-style:italic;font-weight:500;src:url('../../public/fonts/cormorant-garamond-italic-latin.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-weight:400 500;src:url('../../public/fonts/outfit-latin.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-weight:400 500;src:url('../../public/fonts/dm-mono-medium-latin.woff2') format('woff2')}
+@font-face{font-family:'Fraunces';font-weight:400 600;src:url('fraunces-normal-latin.woff2') format('woff2')}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:500;src:url('fraunces-italic-latin.woff2') format('woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#faf9f5;--paper-deep:#f3f1ea;--ink:#141413;--ink-body:#33312d;--ink-muted:#605c53;
+--terracotta:#c2552c;--terracotta-ink:#a8451f;--gold:#8a6415;--gold-soft:#e8c87f;--slate:#46666a;
+--prism:linear-gradient(90deg,#c2552c,#e8c87f 55%,#8a6415)}
+body{width:1440px;background:var(--paper);color:var(--ink-body);font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased}
+/* paper grain overlay */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.055;mix-blend-mode:multiply;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.kick{font-family:'DM Mono';font-size:13px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted);display:inline-flex;align-items:center;gap:14px}
+.tick{width:26px;height:3px;background:var(--prism)}
+.tag{position:absolute;font-family:'DM Mono';font-size:11px;letter-spacing:.1em;color:var(--terracotta-ink);text-transform:uppercase}
+.amp{color:var(--terracotta-ink)}
+</style></head><body><div class="grain"></div>
+<section style="padding:140px 90px 90px;position:relative">
+  <div style="position:relative;display:inline-block">
+    <span class="tag" style="top:-26px;left:2px">Direction A — Clarity Mechanic + Craft</span>
+  </div>
+  <div class="kick" style="margin-bottom:34px"><span class="tick" style="box-shadow:inset 0 1px 1px rgba(0,0,0,.35)"></span>CODE <span class="amp">&amp;</span> CLARITY</div>
+  <h1 style="font-family:'Cormorant';font-weight:500;font-size:92px;line-height:1.0;letter-spacing:-.01em;color:var(--ink);max-width:1180px">
+    <span style="filter:blur(3px);opacity:.32">Most AI pilots die between the strategy</span><br>
+    <span style="position:relative;font-style:italic;color:var(--terracotta-ink)">
+      <span style="position:absolute;inset:0;filter:blur(7px);opacity:.45">and the build. We were built for that gap.</span>
+      <span style="position:relative">and the build. We were built for that gap.</span>
+    </span>
+  </h1>
+  <div style="font-family:'DM Mono';font-size:12px;letter-spacing:.08em;color:var(--ink-muted);margin-top:26px">
+    &darr; on entry the line resolves: scatter &rarr; blur &rarr; clarity
+  </div>
+  <p style="font-size:20px;line-height:1.6;color:var(--ink-body);max-width:560px;margin-top:30px">
+    Implementation strategy, audits, governance, and training — from a team with 10+ years
+    across engineering, technical training, and editorial. We shipped before we consulted.
+  </p>
+  <div style="margin-top:40px;display:flex;gap:22px;align-items:center">
+    <a style="background:var(--ink);color:var(--paper);font-weight:500;font-size:15px;padding:15px 26px;text-decoration:none;border-radius:2px">Book a 45-minute diagnostic &rarr;</a>
+    <span style="color:var(--terracotta-ink);font-weight:500">See how we work &rsaquo;</span>
+  </div>
+</section>
+<section style="padding:70px 90px;background:var(--paper-deep);border-top:1px solid rgba(20,20,19,.12);position:relative">
+  <div style="font-family:'Cormorant';font-size:40px;line-height:1.4;font-weight:500;color:var(--ink);max-width:880px;padding-left:30px;border-left:2px solid var(--terracotta);
+    text-shadow:0 1px 0 rgba(255,255,255,.6)">
+    We name trade-offs out loud, we only recommend what we could build ourselves, and we&rsquo;d
+    rather lose an engagement by being honest about fit than win one with a <em style="color:var(--terracotta-ink)">deck.</em>
+  </div>
+  <div style="font-family:'DM Mono';font-size:11px;letter-spacing:.1em;color:var(--ink-muted);margin-top:28px;text-transform:uppercase">Letterpress-debossed rules &middot; paper grain &middot; warm ivory unchanged</div>
+</section>
