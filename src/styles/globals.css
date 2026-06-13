@@ -472,6 +472,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   color: var(--ink-muted);
 }
 .status-dot {
+  position: relative;
   width: 7px; height: 7px;
   border-radius: 50%;
   background: var(--terracotta);
@@ -1253,10 +1254,17 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 
 /* ── Footer ──────────────────────────────────────────────────────── */
 .site-footer {
-  border-top: 2px solid transparent;
-  border-image: var(--grad-prism) 1;
+  position: relative;
   background: var(--paper-deep);
   padding: 2.6rem var(--pad-x) 2.8rem;
+}
+/* Top accent as a bar (not border-image) so light can flow through it. */
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--grad-prism);
 }
 .footer-inner {
   max-width: var(--content-w);
@@ -1334,6 +1342,56 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   padding: 0.4rem 0.5rem;
   color: var(--ink-muted);
 }
+
+/* ── Ambient brand motion — continuous, on-brand, reduced-motion-safe ──
+   Three loops, all compositor-only (background-position / opacity /
+   transform / stroke-dashoffset): light flows through every prism rule,
+   the availability dot breathes, and pulses travel the flow diagrams.
+   Each is created only inside no-preference, so reduced motion gets the
+   static design — not a frozen mid-animation frame. */
+
+/* Flow paths stay invisible until motion is allowed (inline style sets
+   --flow-color, never `stroke` directly, so this guard always wins). */
+.loop-flow { fill: none; stroke: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* 1 — light flows through the prism rules */
+  .divider--prism,
+  .kicker::before,
+  .nav-logo-tick,
+  .about-rule,
+  .site-footer::before {
+    background-image: linear-gradient(90deg,
+      #c2552c 0%, #8a6415 25%, #e8c87f 50%, #8a6415 75%, #c2552c 100%);
+    background-size: 200% 100%;
+    animation: prism-flow 14s linear infinite;
+  }
+
+  /* 2 — availability dot: gentle breath + a single expanding ring */
+  .status-dot { animation: dot-pulse 2.8s ease-in-out infinite; }
+  .status-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid var(--terracotta);
+    animation: dot-ring 2.8s ease-out infinite;
+  }
+
+  /* 3 — one slow pulse travels each diagram edge (the loop is literal) */
+  .loop-flow {
+    stroke: var(--flow-color, var(--terracotta));
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 0.05 0.95;   /* pathLength=1 → exactly one dash, seamless */
+    animation: flow-travel 3.6s linear infinite;
+  }
+}
+
+@keyframes prism-flow { from { background-position: 0% 50%; } to { background-position: 200% 50%; } }
+@keyframes dot-pulse  { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@keyframes dot-ring   { 0% { transform: scale(1); opacity: 0.55; } 100% { transform: scale(3.2); opacity: 0; } }
+@keyframes flow-travel { to { stroke-dashoffset: -1; } }
 
 /* ── Responsive ──────────────────────────────────────────────────── */
 @media (max-width: 920px) {

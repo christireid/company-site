@@ -66,7 +66,7 @@ function LoopDiagram({ active, onToggle }: { active: PracticeId | null; onToggle
         role="group"
         aria-label="The practice loop: implementation strategy, audits and governance, and training feed one another in a continuous cycle. Each node is a button that highlights its practice."
       >
-        {EDGES.map(([fromId, toId]) => {
+        {EDGES.map(([fromId, toId], i) => {
           const a = byId[fromId], b = byId[toId]
           const dx = b.x - a.x, dy = b.y - a.y
           const len = Math.hypot(dx, dy)
@@ -78,10 +78,17 @@ function LoopDiagram({ active, onToggle }: { active: PracticeId | null; onToggle
           const px = -uy, py = ux
           const b1x = tipX - ux * 8 + px * 4.5, b1y = tipY - uy * 8 + py * 4.5
           const b2x = tipX - ux * 8 - px * 4.5, b2y = tipY - uy * 8 - py * 4.5
+          const d = `M ${x1} ${y1} L ${x2} ${y2}`
           return (
             <g key={`${fromId}-${toId}`}>
-              <path className="loop-edge" pathLength={1} d={`M ${x1} ${y1} L ${x2} ${y2}`} />
+              <path className="loop-edge" pathLength={1} d={d} />
               <polygon className="loop-arrow" points={`${tipX},${tipY} ${b1x},${b1y} ${b2x},${b2y}`} />
+              <path
+                className="loop-flow"
+                pathLength={1}
+                d={d}
+                style={{ '--flow-color': a.accent, animationDelay: `${i * -1.2}s` } as React.CSSProperties}
+              />
             </g>
           )
         })}
